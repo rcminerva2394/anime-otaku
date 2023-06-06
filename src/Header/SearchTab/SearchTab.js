@@ -7,9 +7,9 @@ const SearchTab = () => {
       <input
         type='text'
         placeholder='Search...'
-        class='bg-inherit outline-0 mr-5'
+        class='bg-inherit outline-0 mr-5 placeholder-gray font-medium'
       ></input>
-      <MagnifyingGlassIcon class='w-6 h-6 text-gray' />
+      <MagnifyingGlassIcon class='w-6 h-6 text-gray hover:text-black' />
     </div>
   );
 };
