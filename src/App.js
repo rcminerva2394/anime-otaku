@@ -1,8 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import SearchTab from './Header/SearchTab/SearchTab';
-import Navigation from './Header/Navigation/Navigation';
-import Home from './Header/Navigation/Home';
+import SearchTab from './Header/SearchTab';
+import Navigation from './Header/Navigation';
+import Home from './Home/Home';
 import Genres from './Header/Navigation/Genres';
 import AllAnime from './Header/Navigation/AllAnime';
 
