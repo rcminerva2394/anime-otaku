@@ -6,9 +6,14 @@ import TopAnime from './TopAnime/TopAnime';
 const Home = () => {
   return (
     <>
-      <ThisSeasonAnime />
-      <Upcoming />
-      <TopAnime />
+      <div class='grid grid-cols-3'>
+        <div class='col-start-1 col-end-3'>
+          <ThisSeasonAnime />
+          <Upcoming />
+        </div>
+
+        <TopAnime />
+      </div>
     </>
   );
 };

@@ -8,11 +8,11 @@ const TopAnime = () => {
 
   if (data) {
     return (
-      <section class='my-20 mx-8'>
-        <h2 class='uppercase font-bold mb-1.5 text-lg'>Top 100 Anime</h2>
-        <ul>
+      <section class='my-20 mx-8 bg-light-gray p-3'>
+        <h2 class='uppercase font-bold mb-4 text-lg'>Top 100 Anime</h2>
+        <ul class='flex gap-6 flex-col'>
           {data.data.map((anime) => (
-            <TopAnimeItem anime={anime} id={anime.mal_id} />
+            <TopAnimeItem anime={anime} key={anime.mal_id} />
           ))}
         </ul>
       </section>
@@ -24,7 +24,7 @@ const TopAnime = () => {
   }
 
   if (error) {
-    return <p>Sorry!</p>;
+    return <p>Sorry! {error}</p>;
   }
 };
 

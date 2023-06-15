@@ -9,7 +9,7 @@ const Upcoming = () => {
   if (data) {
     return (
       <section class='my-20 mx-8'>
-        <h2 class='uppercase font-bold mb-1.5 text-lg'>Upcoming</h2>
+        <h2 class='uppercase font-bold mb-4 text-lg'>Upcoming</h2>
         <AnimeList animeList={data} />
       </section>
     );

@@ -9,7 +9,7 @@ const ThisSeason = () => {
   if (data) {
     return (
       <section class='my-20 mx-8'>
-        <h2 class='uppercase font-bold mb-1.5 text-lg'>Popular This Season</h2>
+        <h2 class='uppercase font-bold mb-4 text-lg'>Popular This Season</h2>
         <AnimeList animeList={data} />
       </section>
     );
