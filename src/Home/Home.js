@@ -2,6 +2,7 @@ import React from 'react';
 import ThisSeasonAnime from './ThisSeason';
 import Upcoming from './Upcoming';
 import TopAnime from './TopAnime/TopAnime';
+import Schedules from './Schedules/Schedules';
 
 const Home = () => {
   return (
@@ -10,8 +11,8 @@ const Home = () => {
         <div class='col-start-1 col-end-3'>
           <ThisSeasonAnime />
           <Upcoming />
+          <Schedules />
         </div>
-
         <TopAnime />
       </div>
     </>

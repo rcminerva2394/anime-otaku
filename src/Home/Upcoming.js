@@ -3,7 +3,7 @@ import useDataFetcher from '../customHooks/useDataFetcher';
 import AnimeList from '../UI/AnimeList';
 
 const Upcoming = () => {
-  const url = 'https://api.jikan.moe/v4/seasons/upcoming?limit=10';
+  const url = 'https://api.jikan.moe/v4/seasons/upcoming?limit=8';
   const { data, loading, error } = useDataFetcher(url);
 
   if (data) {

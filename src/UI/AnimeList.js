@@ -3,7 +3,7 @@ import AnimeCard from './AnimeCard';
 
 const AnimeList = ({ animeList }) => {
   return (
-    <ul class='grid grid-cols-5 gap-2'>
+    <ul class='grid grid-cols-4 gap-2 gap-y-5'>
       {animeList.data.map((anime) => (
         <AnimeCard anime={anime} key={anime.mal_id} />
       ))}

@@ -1,4 +1,4 @@
-const topAnimeColors = {
+const TOP_ANIME_COLORS = {
   1: 'bg-tp-1',
   2: 'bg-tp-2',
   3: 'bg-tp-3',
@@ -11,4 +11,4 @@ const topAnimeColors = {
   10: 'bg-tp-10',
 };
 
-export default topAnimeColors;
+export default TOP_ANIME_COLORS;

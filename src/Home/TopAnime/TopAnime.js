@@ -8,7 +8,7 @@ const TopAnime = () => {
 
   if (data) {
     return (
-      <section class='my-20 mx-8 bg-light-gray p-3'>
+      <section class='my-20 mx-8 bg-stone-100 p-3'>
         <h2 class='uppercase font-bold mb-4 text-lg'>Top 100 Anime</h2>
         <ul class='flex gap-6 flex-col'>
           {data.data.map((anime) => (

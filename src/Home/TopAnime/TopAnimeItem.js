@@ -1,6 +1,6 @@
 import React from 'react';
-import topAnimeColors from '../../constants/topColors';
 
+import TOP_ANIME_COLORS from '../../constants/topColors';
 const TopAnimeItem = ({ anime }) => {
   const {
     title_english: englishTitle,
@@ -17,7 +17,7 @@ const TopAnimeItem = ({ anime }) => {
     <>
       <li class='relative'>
         <div
-          class={`w-12 h-12 ${topAnimeColors[rank]} flex justify-center items-center absolute`}
+          class={`w-12 h-12 ${TOP_ANIME_COLORS[rank]} flex justify-center items-center absolute`}
         >
           <p class='text-white text-3xl font-bebas'>{rank}</p>
         </div>
@@ -29,7 +29,7 @@ const TopAnimeItem = ({ anime }) => {
             class='bg-cover w-40'
           />
           <div>
-            <p class='font-medium text-xl'>
+            <p class='font-medium text-lg'>
               {' '}
               {englishTitle ? englishTitle : title}
             </p>
@@ -41,7 +41,7 @@ const TopAnimeItem = ({ anime }) => {
               {genres.map((genre) => (
                 <li
                   key={genre['mal_id']}
-                  class={`${topAnimeColors[rank]} rounded-full text-center text-white px-2 py-1 inline font-medium`}
+                  class={`${TOP_ANIME_COLORS[rank]} rounded-full text-center text-white px-2 py-1 inline font-medium text-sm`}
                 >
                   {genre.name}
                 </li>
