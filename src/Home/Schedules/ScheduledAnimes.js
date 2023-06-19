@@ -4,7 +4,7 @@ import useDataFetcher from '../../customHooks/useDataFetcher';
 
 const ScheduledAnimes = ({ day }) => {
   const url = `https://api.jikan.moe/v4/schedules/${day}`;
-  const { data, error, loading } = useDataFetcher(url);
+  const { data, loading, error } = useDataFetcher(url, 1000);
 
   if (data) {
     return (
@@ -17,7 +17,7 @@ const ScheduledAnimes = ({ day }) => {
   }
 
   if (error) {
-    return <p>Sorry!</p>;
+    return <p>{error.message}</p>;
   }
 
   if (loading) {
