@@ -1,6 +1,6 @@
 import React from 'react';
 import ScheduledAnime from './ScheduledAnime';
-import useDataFetcher from '../../customHooks/useDataFetcher';
+import useDataFetcher from '../../../customHooks/useDataFetcher';
 
 const ScheduledAnimes = ({ day }) => {
   const url = `https://api.jikan.moe/v4/schedules/${day}`;

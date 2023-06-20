@@ -1,17 +1,19 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import SearchTab from './Header/SearchTab';
-import Navigation from './Header/Navigation';
-import Home from './Home/Home';
-import Genres from './Header/Navigation/Genres';
-import AllAnime from './Header/Navigation/AllAnime';
+import SearchTab from './components/Header/SearchTab';
+import Navigation from './components/Header/Navigation';
+import Home from './components/Home/Home';
+import Genres from './components/Header/Navigation/Genres';
+import AllAnime from './components/Header/Navigation/AllAnime';
+import AnimeInfo from './components/AnimeInfo/AnimeInfo';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <>
       <header class='flex justify-between items-center'>
         <div class='flex flex-row gap-x-6'>
-          <p class='font-lily text-4xl'>AnimeOtaku</p>
+          <p class='font-lily text-5xl'>AnimeOtaku</p>
           <SearchTab />
         </div>
         <Navigation />
@@ -20,7 +22,9 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/genres' element={<Genres />} />
         <Route path='/all-anime' element={<AllAnime />} />
+        <Route path='/anime-info/:id' element={<AnimeInfo />} />
       </Routes>
+      <Footer />
     </>
   );
 }

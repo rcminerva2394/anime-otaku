@@ -1,6 +1,6 @@
 import React from 'react';
-import useDataFetcher from '../customHooks/useDataFetcher';
-import AnimeList from '../UI/AnimeList';
+import useDataFetcher from '../../customHooks/useDataFetcher';
+import AnimeList from '../../UI/AnimeList';
 
 const ThisSeason = () => {
   const url = 'https://api.jikan.moe/v4/seasons/now?limit=8&page=1';

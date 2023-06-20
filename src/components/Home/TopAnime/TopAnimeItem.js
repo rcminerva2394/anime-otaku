@@ -1,6 +1,7 @@
 import React from 'react';
+import TOP_ANIME_COLORS from '../../../constants/topColors';
+import { Link } from 'react-router-dom';
 
-import TOP_ANIME_COLORS from '../../constants/topColors';
 const TopAnimeItem = ({ anime }) => {
   const {
     title_english: englishTitle,
@@ -11,17 +12,18 @@ const TopAnimeItem = ({ anime }) => {
     type,
     episodes,
     genres,
+    mal_id: id,
   } = anime;
 
   return (
-    <>
-      <li class='relative'>
-        <div
-          class={`w-12 h-12 ${TOP_ANIME_COLORS[rank]} flex justify-center items-center absolute`}
-        >
-          <p class='text-white text-3xl font-bebas'>{rank}</p>
-        </div>
+    <li class='relative'>
+      <div
+        class={`w-12 h-12 ${TOP_ANIME_COLORS[rank]} flex justify-center items-center absolute`}
+      >
+        <p class='text-white text-3xl font-bebas'>{rank}</p>
+      </div>
 
+      <Link to={`/anime-info/${id}`}>
         <div class='flex gap-5 items-center'>
           <img
             src={images.webp.large_image_url}
@@ -49,8 +51,8 @@ const TopAnimeItem = ({ anime }) => {
             </ul>
           </div>
         </div>
-      </li>
-    </>
+      </Link>
+    </li>
   );
 };
 

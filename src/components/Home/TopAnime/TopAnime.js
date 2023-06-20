@@ -1,5 +1,5 @@
 import React from 'react';
-import useDataFetcher from '../../customHooks/useDataFetcher';
+import useDataFetcher from '../../../customHooks/useDataFetcher';
 import TopAnimeItem from './TopAnimeItem';
 
 const TopAnime = () => {
@@ -24,7 +24,7 @@ const TopAnime = () => {
   }
 
   if (error) {
-    return <p>Sorry! {error}</p>;
+    return <p>Sorry!</p>;
   }
 };
 
