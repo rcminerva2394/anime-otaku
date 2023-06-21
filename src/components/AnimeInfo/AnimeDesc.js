@@ -8,43 +8,67 @@ const AnimeDesc = ({ info }) => {
     images,
     rank,
     popularity,
-    sypnosis,
+    synopsis,
     type,
     studios,
     aired,
     status,
     genres,
+    score,
+    year,
+    duration,
+    source,
+    broadcast,
+    episodes,
   } = info;
 
   return (
-    <>
-      <div>
+    <section class='bg-zinc-100 p-6 w-4/5'>
+      <div class='grid grid-cols-3 items-center gap-x-8'>
         <img
           src={images.webp.large_image_url}
           alt={englishTitle ? englishTitle : title}
-          class='bg-cover w-full h-5/6'
+          class='bg-cover w-full'
         />
-        <div>
-          <div>
-            <p>{englishTitle}</p>
-            <p>{title}</p>
-            <p>{japaneseTitle}</p>
+        <div class='col-span-2'>
+          <div class='flex justify-between items-center mb-10'>
+            <div>
+              <p class='text-2xl font-bold'>{englishTitle}</p>
+              <p class='text-lg'>{title}</p>
+              <p>{japaneseTitle}</p>
+            </div>
+            <div>
+              <p>Rank: {rank}</p>
+              <p>Popularity: {popularity}</p>
+            </div>
           </div>
-          <div>
-            <p>Rank:{rank}</p>
-            <p>Popularity:{popularity}</p>
-          </div>
-          <p>{sypnosis}</p>
-          <div>
-            <p>Type: {type}</p>
-            <p>Studios: {studios[0].name}</p>
-            <p>Date Aired: {aired.string}</p>
-            <p>Status: {status}</p>
-            <p>Genres: {genres.map((genre) => `${genre.name}, `)}</p>
+
+          <p class='mb-10'>{synopsis}</p>
+          <div class='flex justify-between'>
+            <div>
+              <p>Type: {type}</p>
+              <p>Studios: {studios[0].name}</p>
+              <p>Date Aired: {aired.string}</p>
+              <p>Status: {status}</p>
+              <div>
+                Genres:{' '}
+                {genres.map((genre) => (
+                  <p class='ml-4'>{genre.name}</p>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p>Score: {score}</p>
+              <p>Premiered: {year} </p>
+              <p>Duration: {duration}</p>
+              <p>Source: {source}</p>
+              <p>Airtime: {broadcast.string}</p>
+              <p>Episodes: {episodes}</p>
+            </div>
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 
