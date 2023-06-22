@@ -6,6 +6,7 @@ import Home from './components/Home/Home';
 import Genres from './components/Header/Navigation/Genres';
 import AllAnime from './components/Header/Navigation/AllAnime';
 import AnimeInfo from './components/AnimeInfo/AnimeInfo';
+import AllCharacters from './components/AnimeInfo/Characters/AllCharacters';
 import Footer from './components/Footer';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path='/genres' element={<Genres />} />
         <Route path='/all-anime' element={<AllAnime />} />
         <Route path='/anime-info/:id' element={<AnimeInfo />} />
+        <Route path='/all-characters/:id' element={<AllCharacters />} />
       </Routes>
       <Footer />
     </>

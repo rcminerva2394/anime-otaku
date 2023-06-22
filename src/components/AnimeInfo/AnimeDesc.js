@@ -47,7 +47,9 @@ const AnimeDesc = ({ info }) => {
           <div class='flex justify-between'>
             <div>
               <p>Type: {type}</p>
-              <p>Studios: {studios[0].name}</p>
+              <p>
+                Studios: {studios.length !== 0 ? studios[0].name : 'Undefined'}
+              </p>
               <p>Date Aired: {aired.string}</p>
               <p>Status: {status}</p>
               <div>

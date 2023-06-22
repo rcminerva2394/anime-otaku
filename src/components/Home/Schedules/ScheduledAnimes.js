@@ -1,6 +1,7 @@
 import React from 'react';
 import ScheduledAnime from './ScheduledAnime';
 import useDataFetcher from '../../../customHooks/useDataFetcher';
+import { Link } from 'react-router-dom';
 
 const ScheduledAnimes = ({ day }) => {
   const url = `https://api.jikan.moe/v4/schedules/${day}`;
@@ -10,7 +11,9 @@ const ScheduledAnimes = ({ day }) => {
     return (
       <ul class='grid grid-cols-2 gap-3 mt-12'>
         {data.data.map((anime) => (
-          <ScheduledAnime anime={anime} key={anime.mal_id} />
+          <Link to={`/anime-info/${anime['mal_id']}`}>
+            <ScheduledAnime anime={anime} key={anime.mal_id} />
+          </Link>
         ))}
       </ul>
     );

@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import useDataFetcher from '../../customHooks/useDataFetcher';
 import AnimeDesc from './AnimeDesc';
-import Characters from './Characters';
+import CharactersPrev from './Characters/CharactersPrev';
 
 const AnimeInfo = () => {
   const { id } = useParams();
@@ -10,7 +10,12 @@ const AnimeInfo = () => {
   const { data, loading, error } = useDataFetcher(url);
 
   if (data) {
-    return <AnimeDesc info={data.data} />;
+    return (
+      <main class='grid justify-items-center py-24 gap-y-8'>
+        <AnimeDesc info={data.data} />
+        <CharactersPrev id={id} />
+      </main>
+    );
   }
 
   if (loading) {
