@@ -1,7 +1,7 @@
 import React from 'react';
 
-const CharacterItem = ({ characterItem }) => {
-  const { character, role, voice_actors: voiceActors } = characterItem;
+const CharacterItem = ({ data }) => {
+  const { character, role, voice_actors: voiceActors } = data;
 
   const finalVoiceActor = voiceActors.filter(
     (actor) => actor.language === 'Japanese'
@@ -19,7 +19,7 @@ const CharacterItem = ({ characterItem }) => {
           <p class='font-light'>{role}</p>
         </div>
       </div>
-      {voiceActors.length >= 1 ? (
+      {finalVoiceActor.length >= 1 ? (
         <div class='flex flex-column gap-x-4'>
           <div class='self-end text-right'>
             <p>{finalVoiceActor[0].person.name}</p>
