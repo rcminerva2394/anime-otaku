@@ -9,7 +9,7 @@ const AllCharacters = () => {
   return (
     <section class='my-24 grid justify-items-center'>
       <div class='w-4/5'>
-        <p class='text-lg font-medium'> Characters</p>
+        <p class='text-xl font-bold mb-12 uppercase'> Characters</p>
         <Characters data={data} />
       </div>
     </section>

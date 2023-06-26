@@ -16,6 +16,7 @@ const useDataFetcher = (url, delay = 0) => {
         setData(data);
         setError(null);
       } catch (err) {
+        console.log(err.message);
         if (!isLoading) {
           setError(err);
         }

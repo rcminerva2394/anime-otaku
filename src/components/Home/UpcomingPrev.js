@@ -2,15 +2,19 @@ import React from 'react';
 import useDataFetcher from '../../customHooks/useDataFetcher';
 import AnimeList from '../../UI/AnimeList';
 
-const Upcoming = () => {
+const UpcomingPrev = () => {
   const url = 'https://api.jikan.moe/v4/seasons/upcoming?limit=8';
   const { data, loading, error } = useDataFetcher(url);
 
   if (data) {
+    const prevData = data.data.slice(0, 8);
     return (
       <section class='my-20 mx-8'>
-        <h2 class='uppercase font-bold mb-4 text-lg'>Upcoming</h2>
-        <AnimeList animeList={data} />
+        <div class='flex justify-between items-center'>
+          <h2 class='uppercase font-bold mb-4 text-lg'>Upcoming</h2>
+          <p class='text-sm text-slate-600 hover:text-black'>View All</p>
+        </div>
+        <AnimeList animeList={prevData} layout='col4' />
       </section>
     );
   }
@@ -24,4 +28,4 @@ const Upcoming = () => {
   }
 };
 
-export default Upcoming;
+export default UpcomingPrev;

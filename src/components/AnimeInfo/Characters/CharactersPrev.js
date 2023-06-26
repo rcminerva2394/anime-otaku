@@ -15,7 +15,7 @@ const CharactersPrev = ({ id }) => {
     return (
       <section class='my-24 w-4/5'>
         <div class='flex justify-between items-center mb-3'>
-          <p class='text-lg font-medium'> Characters</p>
+          <p class='text-lg font-medium uppercase'> Characters</p>
           <Link to={`/all-characters/${id}`} state={{ data: data.data }}>
             <p class='text-sm text-slate-600 hover:text-black'>View All</p>
           </Link>
