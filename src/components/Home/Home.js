@@ -1,7 +1,7 @@
 import React from 'react';
 import ThisSeasonPrev from './ThisSeasonPrev';
 import UpcomingPrev from './UpcomingPrev';
-import TopAnimePrev from './TopAnime/TopAnime';
+import TopAnimePrev from './TopAnime/TopAnimePrev';
 import Schedules from './Schedules/Schedules';
 
 const Home = () => {

@@ -8,8 +8,9 @@ import AllAnime from './components/Header/Navigation/AllAnime';
 import AnimeInfo from './components/AnimeInfo/AnimeInfo';
 import AllCharacters from './components/AnimeInfo/Characters/AllCharacters';
 import CharacterInfo from './components/AnimeInfo/CharacterInfo/CharacterInfo';
-import ThisSeason from './components/ThisSeason';
-import Upcoming from './components/Upcoming';
+import AllThisSeason from './components/AllThisSeason';
+import AllUpcoming from './components/AllUpcoming';
+import AllTop100Anime from './components/AllTop100Anime';
 import Footer from './components/Footer';
 
 function App() {
@@ -29,8 +30,9 @@ function App() {
         <Route path='/anime-info/:id' element={<AnimeInfo />} />
         <Route path='/all-characters/:id' element={<AllCharacters />} />
         <Route path='/character-info/:id' element={<CharacterInfo />} />
-        <Route path='/popular-this-season' element={<ThisSeason />} />
-        <Route path='/upcoming' element={<Upcoming />} />
+        <Route path='/popular-this-season' element={<AllThisSeason />} />
+        <Route path='/upcoming' element={<AllUpcoming />} />
+        <Route path='/top-100-anime' element={<AllTop100Anime />} />
       </Routes>
       <Footer />
     </>

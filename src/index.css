@@ -3,8 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer base {
   html {
@@ -15,3 +13,18 @@
     padding: 1rem 2rem;
   }
 }
+
+@tailwind components;
+
+@layer components {
+  .btn-page {
+    border-color: #bbbbbb;
+    @apply border-2 py-1 px-2 rounded-md;
+  }
+
+  .btn-page:hover {
+    background-color: #f6f6f6;
+  }
+}
+
+@tailwind utilities;
