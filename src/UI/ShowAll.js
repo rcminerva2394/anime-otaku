@@ -33,7 +33,6 @@ const ShowAll = ({ prevData, url, title }) => {
   if (data) {
     return (
       <>
-        {console.log(title)}
         <section class='my-24 grid justify-items-center'>
           <div class='w-4/5'>
             <p class='text-xl font-bold mb-12 uppercase'>{title}</p>

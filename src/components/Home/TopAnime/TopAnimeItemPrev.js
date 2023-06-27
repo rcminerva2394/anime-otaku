@@ -2,7 +2,7 @@ import React from 'react';
 import TOP_ANIME_COLORS from '../../../constants/topColors';
 import { Link } from 'react-router-dom';
 
-const TopAnimeItem = ({ anime }) => {
+const TopAnimeItemPrev = ({ anime }) => {
   const {
     title_english: englishTitle,
     title,
@@ -56,4 +56,4 @@ const TopAnimeItem = ({ anime }) => {
   );
 };
 
-export default TopAnimeItem;
+export default TopAnimeItemPrev;

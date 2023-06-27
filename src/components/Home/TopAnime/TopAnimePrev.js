@@ -1,13 +1,14 @@
 import React from 'react';
 import useDataFetcher from '../../../customHooks/useDataFetcher';
-import TopAnimeItem from './TopAnimeItem';
+import TopAnimeItemPrev from './TopAnimeItemPrev';
 import { Link } from 'react-router-dom';
 
 const TopAnimePrev = () => {
-  const url = 'https://api.jikan.moe/v4/top/anime?limit=10';
+  const url = 'https://api.jikan.moe/v4/top/anime';
   const { loading, data, error } = useDataFetcher(url);
 
   if (data) {
+    const prevData = data.data.slice(0, 10);
     return (
       <section class='my-20 mx-8 bg-stone-100 p-3'>
         <div class='flex justify-between mb-2 items-center '>
@@ -17,8 +18,8 @@ const TopAnimePrev = () => {
           </Link>
         </div>
         <ul class='flex gap-6 flex-col'>
-          {data.data.map((anime) => (
-            <TopAnimeItem anime={anime} key={anime.mal_id} />
+          {prevData.map((anime) => (
+            <TopAnimeItemPrev anime={anime} key={anime.mal_id} />
           ))}
         </ul>
       </section>
