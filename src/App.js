@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import SearchTab from './components/Header/SearchTab';
 import Navigation from './components/Header/Navigation';
+import Filter from './components/Filter/Filter';
 import Home from './components/Home/Home';
 import Genres from './components/Header/Navigation/Genres';
 import AllAnime from './components/Header/Navigation/AllAnime';
@@ -23,6 +24,7 @@ function App() {
         </div>
         <Navigation />
       </header>
+      <Filter />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/genres' element={<Genres />} />

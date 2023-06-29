@@ -12,6 +12,20 @@
   body {
     padding: 1rem 2rem;
   }
+
+  input,
+  select {
+    box-sizing: border-box;
+  }
+
+  section > select,
+  input {
+    @apply bg-light-pink placeholder-gray rounded-md;
+  }
+
+  section > select {
+    @apply h-10 py-2 px-4 text-gray;
+  }
 }
 
 @tailwind components;
