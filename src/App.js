@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import IsFilterContext from './contexts/IsFilterContext';
 import SearchTab from './components/Header/SearchTab';
 import Navigation from './components/Header/Navigation';
 import Filter from './components/Filter/Filter';
+import FilterSearchResult from './components/Filter/FilterSearchResult';
+import SearchFilterContext from './contexts/SearchFilterContext';
 import Home from './components/Home/Home';
 import Genres from './components/Header/Navigation/Genres';
 import AllAnime from './components/Header/Navigation/AllAnime';
@@ -15,29 +18,39 @@ import AllTop100Anime from './components/AllTop100Anime';
 import Footer from './components/Footer';
 
 function App() {
+  const [isFiltering, setIsFiltering] = useState(false);
+  // For the filter url and search url
+  const [url, setUrl] = useState('');
+
   return (
-    <>
-      <header class='flex justify-between items-center'>
-        <div class='flex flex-row gap-x-6'>
-          <p class='font-lily text-5xl'>AnimeOtaku</p>
-          <SearchTab />
-        </div>
-        <Navigation />
-      </header>
-      <Filter />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/genres' element={<Genres />} />
-        <Route path='/all-anime' element={<AllAnime />} />
-        <Route path='/anime-info/:id' element={<AnimeInfo />} />
-        <Route path='/all-characters/:id' element={<AllCharacters />} />
-        <Route path='/character-info/:id' element={<CharacterInfo />} />
-        <Route path='/popular-this-season' element={<AllThisSeason />} />
-        <Route path='/upcoming' element={<AllUpcoming />} />
-        <Route path='/top-100-anime' element={<AllTop100Anime />} />
-      </Routes>
-      <Footer />
-    </>
+    <IsFilterContext.Provider value={{ isFiltering, setIsFiltering }}>
+      <SearchFilterContext.Provider value={{ url, setUrl }}>
+        <header class='flex justify-between items-center'>
+          <div class='flex flex-row gap-x-6'>
+            <p class='font-lily text-5xl'>AnimeOtaku</p>
+            <SearchTab />
+          </div>
+          <Navigation />
+        </header>
+        {isFiltering ? <Filter /> : ''}
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route
+            path='/search-results'
+            element={<FilterSearchResult url={url} />}
+          />
+          <Route path='/genres' element={<Genres />} />
+          <Route path='/all-anime' element={<AllAnime />} />
+          <Route path='/anime-info/:id' element={<AnimeInfo />} />
+          <Route path='/all-characters/:id' element={<AllCharacters />} />
+          <Route path='/character-info/:id' element={<CharacterInfo />} />
+          <Route path='/popular-this-season' element={<AllThisSeason />} />
+          <Route path='/upcoming' element={<AllUpcoming />} />
+          <Route path='/top-100-anime' element={<AllTop100Anime />} />
+        </Routes>
+        <Footer />
+      </SearchFilterContext.Provider>
+    </IsFilterContext.Provider>
   );
 }
 

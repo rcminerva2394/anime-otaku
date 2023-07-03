@@ -1,4 +1,5 @@
 import React from 'react';
+// import IsFilterContext from '../../contexts/IsFilterContext';
 import useDataFetcher from '../../customHooks/useDataFetcher';
 import AnimeList from '../../UI/AnimeList';
 import { Link } from 'react-router-dom';
@@ -7,6 +8,11 @@ import apiUrls from '../../constants/apiUrls';
 const UpcomingPrev = () => {
   const url = apiUrls.upcoming;
   const { data, loading, error } = useDataFetcher(url);
+  // const { setIsFiltering } = useContext(IsFilterContext);
+
+  // const isFilteringHandler = () => {
+  //   setIsFiltering(true);
+  // };
 
   if (data) {
     const prevData = data.data.slice(0, 8);
@@ -14,7 +20,11 @@ const UpcomingPrev = () => {
       <section class='my-20 mx-8'>
         <div class='flex justify-between mb-6 items-center'>
           <h2 class='uppercase font-bold text-lg'>Upcoming</h2>
-          <Link to={'/upcoming'} state={{ data: data }}>
+          <Link
+            to={'/upcoming'}
+            state={{ data: data }}
+            // onClick={isFilteringHandler}
+          >
             <p class='text-sm text-slate-600 hover:text-black'>View All</p>
           </Link>
         </div>

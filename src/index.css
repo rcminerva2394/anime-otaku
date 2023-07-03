@@ -18,13 +18,13 @@
     box-sizing: border-box;
   }
 
-  section > select,
+  div > select,
   input {
-    @apply bg-light-pink placeholder-gray rounded-md;
+    @apply bg-light-pink placeholder-gray rounded-md w-44;
   }
 
-  section > select {
-    @apply h-10 py-2 px-4 text-gray;
+  div > select {
+    @apply h-10 py-2 px-4 text-gray font-medium;
   }
 }
 

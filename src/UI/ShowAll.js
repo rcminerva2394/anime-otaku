@@ -13,7 +13,7 @@ const ShowAll = ({ prevData, url, title }) => {
   });
 
   // To fetch data when the pageInfo is updated or when user choose specific page
-  const finalUrl = `${url}?page=${pageInfo.currentPage}&sfw`;
+  const finalUrl = `${url}&page=${pageInfo.currentPage}&sfw`;
   const { data, loading, error } = useDataFetcher(finalUrl);
 
   const updatePageHandler = (page) => {

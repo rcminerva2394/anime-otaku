@@ -312,8 +312,8 @@ export const statuses = [
     label: 'Airing',
   },
   {
-    value: 'completed',
-    label: 'Completed',
+    value: 'complete',
+    label: 'Complete',
   },
   {
     value: 'upcoming',
@@ -322,10 +322,10 @@ export const statuses = [
 ];
 
 export const ratings = [
-  {
-    value: 'g',
-    label: 'All',
-  },
+  // {
+  //   value: 'g',
+  //   label: 'All',
+  // },
   {
     value: 'pg',
     label: 'PG',
@@ -348,7 +348,7 @@ export const ratings = [
   },
 ];
 
-export const formats = [
+export const types = [
   {
     value: 'tv',
     label: 'TV',
@@ -376,10 +376,6 @@ export const formats = [
 ];
 
 export const order_by = [
-  {
-    value: '',
-    label: 'Default',
-  },
   {
     value: 'title',
     label: 'Title',
