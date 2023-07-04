@@ -1,24 +1,75 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import { MoonIcon } from '@heroicons/react/24/solid';
 import { Link } from 'react-router-dom';
+import IsFilterContext from '../../contexts/IsFilterContext';
+import { genres } from '../../constants/queryParams';
 
 const Navigation = () => {
+  const { setIsFiltering } = useContext(IsFilterContext);
+
+  const isFilteringHandler = () => {
+    setIsFiltering(false);
+  };
+
+  // For Genres
+  const [isHovered, setIsHovered] = useState(false);
+
+  const hoverHandler = () => {
+    setIsHovered(true);
+  };
+
+  const mouseLeaveHandler = () => {
+    setIsHovered(false);
+  };
+
   return (
     <>
       <nav class='flex flex-row'>
         <ul class='flex flex-row justify-evenly gap-x-10 text-slate-500'>
           <li>
-            <Link to='/' class='hover:text-black focus:text-black'>
+            <Link
+              to='/'
+              class='hover:text-black focus:text-black'
+              onClick={isFilteringHandler}
+            >
               Home
             </Link>
           </li>
-          <li>
-            <Link to='/genres' class='hover:text-black focus:text-black'>
-              Genres
-            </Link>
+          <li
+            onMouseEnter={hoverHandler}
+            onMouseLeave={mouseLeaveHandler}
+            class='hover:text-black focus:text-black '
+            role='button'
+          >
+            <p>Genres</p>
+            {isHovered ? (
+              <ul class='absolute bg-gradient-to-r from-slate-600 to-slate-900 z-10 py-4 px-6 w-4/12 h-96 overflow-scroll grid grid-cols-3 gap-2 -translate-x-3/4 border'>
+                {genres.map((genre) => (
+                  <Link
+                    to='/genres'
+                    onClick={isFilteringHandler}
+                    state={{ id: genre.mal_id, title: genre.name }}
+                  >
+                    <li
+                      key={genre['mal_id']}
+                      class='text-slate-300 hover:text-white focus:text-white'
+                    >
+                      {genre.name}
+                    </li>
+                  </Link>
+                ))}
+              </ul>
+            ) : (
+              ''
+            )}
           </li>
+
           <li>
-            <Link to='/all-anime' class='hover:text-black focus:text-black'>
+            <Link
+              to='/all-anime'
+              class='hover:text-black focus:text-black'
+              onClick={isFilteringHandler}
+            >
               All Anime
             </Link>
           </li>

@@ -1,6 +1,5 @@
 import React from 'react';
 import useDataFetcher from '../../customHooks/useDataFetcher';
-// import IsFilterContext from '../../contexts/IsFilterContext';
 import AnimeList from '../../UI/AnimeList';
 import { Link } from 'react-router-dom';
 import apiUrls from '../../constants/apiUrls';
@@ -8,11 +7,6 @@ import apiUrls from '../../constants/apiUrls';
 const ThisSeasonPrev = () => {
   const url = apiUrls.season;
   const { data, loading, error } = useDataFetcher(url);
-  // const { setIsFiltering } = useContext(IsFilterContext);
-
-  // const isFilteringHandler = () => {
-  //   setIsFiltering(true);
-  // };
 
   if (data) {
     const prevData = data.data.slice(0, 8);
@@ -20,11 +14,7 @@ const ThisSeasonPrev = () => {
       <section class='my-20 mx-8'>
         <div class='flex justify-between mb-6 items-center'>
           <h2 class='uppercase font-bold text-lg'>Popular This Season</h2>
-          <Link
-            to={'/popular-this-season'}
-            state={{ data: data }}
-            // onClick={isFilteringHandler}
-          >
+          <Link to={'/popular-this-season'} state={{ data: data }}>
             <p class='text-sm text-slate-600 hover:text-black'>View All</p>
           </Link>
         </div>

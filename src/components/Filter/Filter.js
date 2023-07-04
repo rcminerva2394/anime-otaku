@@ -8,7 +8,7 @@ import {
 } from '../../constants/queryParams';
 import SearchFilterContext from '../../contexts/SearchFilterContext';
 import apiUrls from '../../constants/apiUrls';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 const Filter = () => {
   const { setUrl } = useContext(SearchFilterContext);
@@ -21,7 +21,7 @@ const Filter = () => {
     rating: '',
     type: '',
     order_by: '',
-    paramArr: ['q', 'genres', 'status', 'rating', 'type', 'order'],
+    paramArr: ['q', 'genres', 'status', 'rating', 'type', 'order_by'],
     getUrl: function () {
       let finalurl = this.url;
       this.paramArr.forEach((param) => {
@@ -34,13 +34,13 @@ const Filter = () => {
   };
 
   const [queryParams, setQueryParams] = useState(queryParamObj);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     setUrl(queryParams.getUrl());
     console.log(queryParams.getUrl());
-    navigate('/search-results');
-  }, [queryParams, navigate, setUrl]);
+    // navigate('/search-results');
+  }, [queryParams, setUrl]);
 
   return (
     <section class='mt-24 flex gap-4 justify-center'>
