@@ -22,7 +22,7 @@ const Schedules = () => {
   };
 
   return (
-    <section class='my-20 mx-8 bg-gradient-to-r from-stone-50 to-stone-200  p-8'>
+    <section class='my-20 mx-8 bg-gradient-to-r from-stone-50 to-stone-200 p-8'>
       <h2 class='uppercase font-bold mb-4 text-lg'>Schedules</h2>
       <div class='flex gap-2 mt-6'>
         {days.map((day, i) => (

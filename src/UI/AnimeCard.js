@@ -37,6 +37,7 @@ const AnimeCard = ({ anime, secTitle }) => {
             alt={englishTitle ? englishTitle : title}
             class='bg-cover w-full h-5/6'
           />
+          <div class='absolute inset-x-0 bottom-0 h-6 custom-gradient'></div>
           <figcaption class='font-medium mt-2'>
             {englishTitle ? englishTitle : title}
           </figcaption>
