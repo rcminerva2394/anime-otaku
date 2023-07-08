@@ -25,8 +25,8 @@ function App() {
   return (
     <IsFilterContext.Provider value={{ isFiltering, setIsFiltering }}>
       <SearchFilterContext.Provider value={{ url, setUrl }}>
-        <header class='flex justify-between items-center'>
-          <div class='flex flex-row gap-x-6'>
+        <header class='flex flex-col justify-start 2xl:flex-row justify-between 2xl:items-center'>
+          <div class='flex flex-col 2xl:flex-row gap-x-6'>
             <p class='font-lily text-5xl'>AnimeOtaku</p>
             <SearchTab />
           </div>

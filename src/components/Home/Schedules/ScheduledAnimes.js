@@ -9,7 +9,7 @@ const ScheduledAnimes = ({ day }) => {
 
   if (data) {
     return (
-      <ul class='grid grid-cols-2 gap-3 mt-12'>
+      <ul class='grid 2xl:grid-cols-2 gap-3 mt-12'>
         {data.data.map((anime) => (
           <Link to={`/anime-info/${anime['mal_id']}`}>
             <ScheduledAnime anime={anime} key={anime.mal_id} />

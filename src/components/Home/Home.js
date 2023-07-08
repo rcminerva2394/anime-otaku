@@ -15,8 +15,8 @@ const Home = () => {
 
   return (
     <>
-      <div class='grid grid-cols-3'>
-        <div class='col-start-1 col-end-3'>
+      <div class='2xl:grid grid-cols-3'>
+        <div class='2xl:col-start-1 col-end-3'>
           <ThisSeasonPrev />
           <UpcomingPrev />
           <Schedules />

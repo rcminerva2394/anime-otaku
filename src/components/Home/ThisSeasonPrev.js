@@ -11,7 +11,7 @@ const ThisSeasonPrev = () => {
   if (data) {
     const prevData = data.data.slice(0, 8);
     return (
-      <section class='my-20 mx-8'>
+      <section class='my-20'>
         <div class='flex justify-between mb-6 items-center'>
           <h2 class='uppercase font-bold text-lg'>Popular This Season</h2>
           <Link to={'/popular-this-season'} state={{ data: data }}>
