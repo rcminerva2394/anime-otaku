@@ -11,7 +11,6 @@ const AnimeList = (props) => {
     <ul
       class={`grid grid-cols-2 gap-x-5 gap-y-14 md:grid-cols-3 ${gridVariants[layout]}`}
     >
-      {console.log(secTitle)}
       {animeList.map((anime) => (
         <AnimeCard anime={anime} key={anime.mal_id} secTitle={secTitle} />
       ))}

@@ -34,7 +34,7 @@ const ShowAll = ({ prevData, url, title }) => {
     return (
       <>
         <section class='my-24 grid justify-items-center'>
-          <div class='w-4/5'>
+          <div class='xl:w-4/5'>
             <p class='text-xl font-bold mb-12 uppercase'>{title}</p>
             <AnimeList animeList={currentData} layout='col5' secTitle={title} />
           </div>

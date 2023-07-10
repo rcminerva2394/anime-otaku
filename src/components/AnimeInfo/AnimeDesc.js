@@ -23,49 +23,73 @@ const AnimeDesc = ({ info }) => {
   } = info;
 
   return (
-    <section class='bg-zinc-100 p-6 w-4/5'>
-      <div class='grid grid-cols-3 items-center gap-x-8'>
+    <section class='bg-zinc-100 p-2 xl:w-4/5 md:p-8'>
+      <div class='grid md:grid-cols-3 items-center gap-x-8'>
         <img
           src={images.webp.large_image_url}
           alt={englishTitle ? englishTitle : title}
           class='bg-cover w-full'
         />
-        <div class='col-span-2'>
-          <div class='flex justify-between items-center mb-10'>
-            <div>
+        <div class='md:col-span-2'>
+          <div class='flex justify-between items-center mb-10 flex-wrap'>
+            <div class='mt-4'>
               <p class='text-2xl font-bold'>{englishTitle}</p>
               <p class='text-lg'>{title}</p>
               <p>{japaneseTitle}</p>
             </div>
-            <div>
-              <p>Rank: {rank}</p>
-              <p>Popularity: {popularity}</p>
+            <div class='mt-4'>
+              <p>
+                <span class='font-medium'>Rank:</span> {rank}
+              </p>
+              <p>
+                <span class='font-medium'>Popularity:</span> {popularity}
+              </p>
             </div>
           </div>
 
           <p class='mb-10'>{synopsis}</p>
-          <div class='flex justify-between'>
+          <div class='flex justify-between flex-wrap'>
             <div>
-              <p>Type: {type}</p>
               <p>
-                Studios: {studios.length !== 0 ? studios[0].name : 'Undefined'}
+                <span class='font-medium'>Type: </span>
+                {type}
               </p>
-              <p>Date Aired: {aired.string}</p>
-              <p>Status: {status}</p>
+              <p>
+                <span class='font-medium'>Studios:</span>
+                {studios.length !== 0 ? studios[0].name : 'Undefined'}
+              </p>
+              <p>
+                <span class='font-medium'>Date Aired:</span> {aired.string}
+              </p>
+              <p>
+                <span class='font-medium'>Status:</span> {status}
+              </p>
               <div>
-                Genres:{' '}
+                <span class='font-medium'>Genres:</span>
                 {genres.map((genre) => (
                   <p class='ml-4'>{genre.name}</p>
                 ))}
               </div>
             </div>
             <div>
-              <p>Score: {score}</p>
-              <p>Premiered: {year} </p>
-              <p>Duration: {duration}</p>
-              <p>Source: {source}</p>
-              <p>Airtime: {broadcast.string}</p>
-              <p>Episodes: {episodes}</p>
+              <p>
+                <span class='font-medium'>Score:</span> {score}
+              </p>
+              <p>
+                <span class='font-medium'>Premiered:</span> {year}{' '}
+              </p>
+              <p>
+                <span class='font-medium'>Duration:</span> {duration}
+              </p>
+              <p>
+                <span class='font-medium'>Source:</span> {source}
+              </p>
+              <p>
+                <span class='font-medium'>Airtime:</span> {broadcast.string}
+              </p>
+              <p>
+                <span class='font-medium'>Episodes:</span> {episodes}
+              </p>
             </div>
           </div>
         </div>

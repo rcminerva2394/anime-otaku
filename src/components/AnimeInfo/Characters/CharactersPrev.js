@@ -13,7 +13,7 @@ const CharactersPrev = ({ id }) => {
   if (data) {
     mainChars = data.data.filter((character) => character.role === 'Main');
     return (
-      <section class='my-24 w-4/5'>
+      <section class='my-24 xl:w-4/5'>
         <div class='flex justify-between items-center mb-3'>
           {data.data.length !== 0 ? (
             <p class='text-lg font-medium uppercase'> Characters</p>

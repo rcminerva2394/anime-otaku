@@ -24,7 +24,7 @@ const TopAnimeItemPrev = ({ anime }) => {
       </div>
 
       <Link to={`/anime-info/${id}`}>
-        <div class='flex gap-5 items-center'>
+        <div class='flex flex-wrap gap-5 items-center sm:flex-nowrap'>
           <img
             src={images.webp.large_image_url}
             alt={englishTitle ? englishTitle : title}
@@ -39,7 +39,7 @@ const TopAnimeItemPrev = ({ anime }) => {
             <p class='font-light'>
               {type} | {episodes} episodes
             </p>
-            <ul class='flex gap-2 flex-wrap mt-3'>
+            <ul class='flex gap-2 flex-wrap mt-3 mb-6'>
               {genres.map((genre) => (
                 <li
                   key={genre['mal_id']}
