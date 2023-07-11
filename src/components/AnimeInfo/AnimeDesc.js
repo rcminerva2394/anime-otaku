@@ -23,7 +23,7 @@ const AnimeDesc = ({ info }) => {
   } = info;
 
   return (
-    <section class='bg-zinc-100 p-2 xl:w-4/5 md:p-8'>
+    <section class='bg-zinc-100 p-2 xl:w-4/5 md:p-8 dark:bg-neutral-800'>
       <div class='grid md:grid-cols-3 items-center gap-x-8'>
         <img
           src={images.webp.large_image_url}

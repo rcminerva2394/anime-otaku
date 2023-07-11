@@ -18,7 +18,7 @@ const Footer = () => {
           rel='
         noreferrer'
         >
-          <GithubIcon class='bg-zinc-700 hover:bg-zinc-900' />
+          <GithubIcon class='bg-zinc-700 hover:bg-zinc-900 dark:bg-transparent' />
         </a>
         <a
           href='#'
@@ -26,7 +26,7 @@ const Footer = () => {
           rel='
         noreferrer'
         >
-          <LinkedinIcon class='bg-zinc-700 hover:bg-zinc-900' />
+          <LinkedinIcon class='bg-zinc-700 hover:bg-zinc-900 dark:bg-transparent' />
         </a>
       </div>
     </footer>

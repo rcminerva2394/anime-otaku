@@ -29,4 +29,3 @@ const ScheduledAnimes = ({ day }) => {
 };
 
 export default ScheduledAnimes;
-// grid 2xl:grid-cols-2 gap-3

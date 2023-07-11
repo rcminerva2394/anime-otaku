@@ -26,16 +26,21 @@ const SearchTab = () => {
   };
 
   return (
-    <div class='flex flex-row items-center bg-light-pink py-3 px-5 rounded-full'>
+    <div
+      class='flex flex-row items-center bg-light-pink py-3 px-5 rounded-full dark:bg-neutral-700
+'
+    >
       <input
         type='text'
         placeholder='Search...'
-        class='bg-inherit outline-0 mr-5 placeholder-gray font-medium'
+        class='bg-inherit outline-0 mr-5 placeholder-gray font-medium dark:placeholder-neutral-400
+'
         onChange={(e) => setInputName(e.target.value)}
         onKeyDown={keyPressHandler}
       ></input>
       <MagnifyingGlassIcon
-        class='w-6 h-6 text-gray hover:text-black'
+        class='w-6 h-6 text-gray hover:text-black dark:text-neutral-400 dark:hover:text-neutral-200
+'
         tabIndex={0}
         onClick={searchAnimeHandler}
       />

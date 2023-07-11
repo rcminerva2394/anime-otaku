@@ -7,7 +7,7 @@ const CharacterItem = ({ data }) => {
     (actor) => actor.language === 'Japanese'
   );
   return (
-    <li class='bg-zinc-100 flex p-2 justify-between'>
+    <li class='bg-zinc-100 flex p-2 justify-between dark:bg-neutral-800'>
       <div class='flex flex-column gap-x-4'>
         <img
           src={character.images.webp.image_url}
@@ -41,3 +41,4 @@ const CharacterItem = ({ data }) => {
 };
 
 export default CharacterItem;
+// ;

@@ -22,7 +22,9 @@ const CharactersPrev = ({ id }) => {
           )}
           {data.data.length >= 5 ? (
             <Link to={`/all-characters/${id}`} state={{ data: data.data }}>
-              <p class='text-sm text-slate-600 hover:text-black'>View All</p>
+              <p class='text-sm text-slate-600 hover:text-black dark:text-neutral-400 dark:hover:text-neutral-200'>
+                View All
+              </p>
             </Link>
           ) : (
             ''

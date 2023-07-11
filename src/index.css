@@ -11,6 +11,7 @@
 
   body {
     padding: 0.5rem 1rem;
+    @apply bg-white dark:bg-neutral-950 dark:text-neutral-300;
   }
 
   input,
@@ -38,13 +39,22 @@
 
 @layer components {
   .btn-page {
-    border-color: #bbbbbb;
-    @apply border-2 py-1 px-2 rounded-md;
+    --outline: 2px solid rgb(115 115 115);
+    outline: var(--outline);
+    padding: 0.5rem 1rem;
+    border: var(--outline);
+    outline-offset: -2px;
+    transition: outline-offset 200ms ease;
+    border-radius: 0.25rem;
   }
 
   .btn-page:hover {
-    background-color: #f6f6f6;
+    outline: 2px solid rgb(115 115 115);
+    outline-offset: -6px;
+    border-radius: 0.25rem;
   }
 }
 
 @tailwind utilities;
+/* background-color: rgb(10 10 10);
+    color: rgb(212 212 212); */

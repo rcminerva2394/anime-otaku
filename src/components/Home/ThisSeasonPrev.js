@@ -15,7 +15,12 @@ const ThisSeasonPrev = () => {
         <div class='flex justify-between mb-6 items-center'>
           <h2 class='uppercase font-bold text-lg'>Popular This Season</h2>
           <Link to={'/popular-this-season'} state={{ data: data }}>
-            <p class='text-sm text-slate-600 hover:text-black'>View All</p>
+            <p
+              class='text-sm text-slate-600 hover:text-black dark:text-neutral-400 dark:hover:text-neutral-200
+'
+            >
+              View All
+            </p>
           </Link>
         </div>
         <AnimeList animeList={prevData} layout='col4' />

@@ -1,11 +1,12 @@
-import React, { useState, useContext } from 'react';
-import { MoonIcon } from '@heroicons/react/24/solid';
+import React, { useState, useContext, useEffect } from 'react';
+import { MoonIcon, SunIcon } from '@heroicons/react/24/solid';
 import { Link } from 'react-router-dom';
 import IsFilterContext from '../../contexts/IsFilterContext';
 import { genres } from '../../constants/queryParams';
 
 const Navigation = () => {
   const { setIsFiltering } = useContext(IsFilterContext);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const isFilteringHandler = () => {
     setIsFiltering(false);
@@ -22,6 +23,20 @@ const Navigation = () => {
     setIsHovered(false);
   };
 
+  // For toggling dark mode
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  useEffect(() => {
+    const html = document.querySelector('html');
+    if (isDarkMode) {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+
   return (
     <>
       <nav class='flex flex-row'>
@@ -29,7 +44,7 @@ const Navigation = () => {
           <li>
             <Link
               to='/'
-              class='hover:text-black focus:text-black'
+              class='hover:text-black focus:text-black dark:text-neutral-400  dark:hover:text-neutral-200'
               onClick={isFilteringHandler}
             >
               Home
@@ -38,7 +53,7 @@ const Navigation = () => {
           <li
             onMouseEnter={hoverHandler}
             onMouseLeave={mouseLeaveHandler}
-            class='hover:text-black focus:text-black '
+            class='hover:text-black focus:text-black dark:text-neutral-400  dark:hover:text-neutral-200'
             role='button'
           >
             <p>Genres</p>
@@ -67,14 +82,24 @@ const Navigation = () => {
           <li>
             <Link
               to='/all-anime'
-              class='hover:text-black focus:text-black'
+              class='hover:text-black focus:text-black dark:text-neutral-400  dark:hover:text-neutral-200'
               onClick={isFilteringHandler}
             >
               All Anime
             </Link>
           </li>
         </ul>
-        <MoonIcon class='w-6 h-6 text-neutral-600 ml-10 hover:text-neutral-700' />
+        {isDarkMode ? (
+          <SunIcon
+            class='w-6 h-6  ml-10 text-neutral-600 hover:text-neutral-700 dark:text-neutral-400  dark:hover:text-neutral-200'
+            onClick={toggleDarkMode}
+          />
+        ) : (
+          <MoonIcon
+            class='w-6 h-6 text-neutral-600 ml-10 hover:text-neutral-700'
+            onClick={toggleDarkMode}
+          />
+        )}
       </nav>
     </>
   );
