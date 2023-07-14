@@ -27,7 +27,7 @@ const SearchTab = () => {
 
   return (
     <div
-      class='flex flex-row items-center bg-light-pink py-3 px-5 rounded-full dark:bg-neutral-700
+      class='flex flex-row items-center bg-light-pink py-2 px-4 lg:py-3 lg:px-5 rounded-full dark:bg-neutral-700 w-60
 '
     >
       <input

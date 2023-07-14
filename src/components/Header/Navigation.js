@@ -4,12 +4,15 @@ import { Link } from 'react-router-dom';
 import IsFilterContext from '../../contexts/IsFilterContext';
 import { genres } from '../../constants/queryParams';
 
-const Navigation = () => {
+const Navigation = ({ isShowMenu }) => {
   const { setIsFiltering } = useContext(IsFilterContext);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  const { showMenu, setShowMenu } = isShowMenu;
+
   const isFilteringHandler = () => {
     setIsFiltering(false);
+    setShowMenu((prevState) => !prevState);
   };
 
   // For Genres
@@ -26,6 +29,7 @@ const Navigation = () => {
   // For toggling dark mode
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
+    setShowMenu((prevState) => !prevState);
   };
 
   useEffect(() => {
@@ -39,8 +43,8 @@ const Navigation = () => {
 
   return (
     <>
-      <nav class='flex flex-row'>
-        <ul class='flex flex-row justify-evenly gap-x-10 text-slate-500'>
+      <nav class='lg:desktop-nav mobile-nav'>
+        <ul class='flex flex-col items-center lg:flex-row justify-evenly gap-x-10 lg:text-slate-500'>
           <li>
             <Link
               to='/'
@@ -91,12 +95,12 @@ const Navigation = () => {
         </ul>
         {isDarkMode ? (
           <SunIcon
-            class='w-6 h-6  ml-10 text-neutral-600 hover:text-neutral-700 dark:text-neutral-400  dark:hover:text-neutral-200'
+            class='w-6 h-6 lg:ml-10 text-neutral-600 hover:text-neutral-700 dark:text-neutral-400  dark:hover:text-neutral-200 justify-self-center'
             onClick={toggleDarkMode}
           />
         ) : (
           <MoonIcon
-            class='w-6 h-6 text-neutral-600 ml-10 hover:text-neutral-700'
+            class='w-6 h-6 text-neutral-600 lg:ml-10 hover:text-neutral-700 justify-self-center'
             onClick={toggleDarkMode}
           />
         )}

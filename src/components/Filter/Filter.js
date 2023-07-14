@@ -8,7 +8,6 @@ import {
 } from '../../constants/queryParams';
 import SearchFilterContext from '../../contexts/SearchFilterContext';
 import apiUrls from '../../constants/apiUrls';
-// import { useNavigate } from 'react-router-dom';
 
 const Filter = () => {
   const { setUrl } = useContext(SearchFilterContext);
@@ -34,17 +33,15 @@ const Filter = () => {
   };
 
   const [queryParams, setQueryParams] = useState(queryParamObj);
-  // const navigate = useNavigate();
 
   useEffect(() => {
     setUrl(queryParams.getUrl());
     console.log(queryParams.getUrl());
-    // navigate('/search-results');
   }, [queryParams, setUrl]);
 
   return (
-    <section class='mt-24 flex gap-4 justify-center'>
-      <div class='flex flex-col gap-3'>
+    <section class='flex justify-center flex-wrap mt-24 gap-4'>
+      <div class='grid grid-cols-3 items-center lg:flex lg:flex-col lg:gap-2 lg:items-start'>
         <label for='search'>Search</label>
         <input
           id='search'
@@ -59,11 +56,13 @@ const Filter = () => {
             })
           }
           placeholder='Search'
-          class='py-2 px-4 h-10'
+          class='py-2 px-4 h-9 col-span-2 dark:placeholder-neutral-400 dark:bg-neutral-700
+
+'
         />
       </div>
 
-      <div class='flex flex-col gap-3'>
+      <div class='grid grid-cols-3 items-center lg:flex lg:flex-col lg:gap-2 lg:items-start'>
         <label for='genres'>Genre</label>
         <select
           id='genres'
@@ -88,7 +87,7 @@ const Filter = () => {
         </select>
       </div>
 
-      <div class='flex flex-col gap-3'>
+      <div class='grid grid-cols-3 items-center lg:flex lg:flex-col lg:gap-2 lg:items-start'>
         <label for='status'>Status</label>
         <select
           id='status'
@@ -113,7 +112,7 @@ const Filter = () => {
         </select>
       </div>
 
-      <div class='flex flex-col gap-3'>
+      <div class='grid grid-cols-3 items-center lg:flex lg:flex-col lg:gap-2 lg:items-start'>
         <label for='rating'>Rating</label>
         <select
           id='rating'
@@ -138,7 +137,7 @@ const Filter = () => {
         </select>
       </div>
 
-      <div class='flex flex-col gap-3'>
+      <div class='grid grid-cols-3 items-center lg:flex lg:flex-col lg:gap-2 lg:items-start'>
         <label for='type'>Type</label>
         <select
           id='type'
@@ -162,7 +161,7 @@ const Filter = () => {
           ))}
         </select>
       </div>
-      <div class='flex flex-col gap-3'>
+      <div class='grid grid-cols-3 items-center lg:flex lg:flex-col lg:gap-2 lg:items-start'>
         <label for='order_by'>Order by</label>
         <select
           for='order_by'
