@@ -11,7 +11,23 @@
 
   body {
     padding: 0.5rem 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: #90a4ae #cfd8dc;
     @apply relative bg-white dark:bg-neutral-950 dark:text-neutral-300;
+  }
+
+  body::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: #cfd8dc;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: #a78bfa;
+    border-radius: 14px;
+    border: 3px solid #cfd8dc;
   }
 
   input,

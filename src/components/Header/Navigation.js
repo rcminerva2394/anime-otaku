@@ -43,7 +43,7 @@ const Navigation = ({ isShowMenu }) => {
 
   return (
     <>
-      <nav class='lg:desktop-nav mobile-nav'>
+      <nav class='mobile-nav lg:desktop-nav '>
         <ul class='flex flex-col items-center lg:flex-row justify-evenly gap-x-10 lg:text-slate-500'>
           <li>
             <Link
@@ -62,7 +62,7 @@ const Navigation = ({ isShowMenu }) => {
           >
             <p>Genres</p>
             {isHovered ? (
-              <ul class='absolute bg-gradient-to-r from-slate-600 to-slate-900 z-10 py-4 px-6 w-4/12 h-96 overflow-scroll grid grid-cols-3 gap-2 -translate-x-3/4 border'>
+              <ul class='absolute bg-gradient-to-r from-slate-600 to-slate-900 z-10 py-4 px-6 lg:w-full xl:w-8/12 lg:h-96 overflow-scroll grid text-sm lg:text-base w-auto h-72  lg:grid-cols-3 gap-2 -translate-x-1/2 lg:-translate-x-3/4 border'>
                 {genres.map((genre) => (
                   <Link
                     to='/genres'
