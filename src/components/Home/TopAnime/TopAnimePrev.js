@@ -14,7 +14,7 @@ const TopAnimePrev = () => {
       <section class='my-20 bg-stone-100 p-3 2xl:mx-8 dark:bg-neutral-800'>
         <div class='flex justify-between mb-6 items-center'>
           <h2 class='uppercase font-bold text-lg'>Top 100 Anime</h2>
-          <Link to={'/top-100-anime/1'} state={{ data: data }}>
+          <Link to={'/anime-otaku/top-100-anime/'} state={{ data: data }}>
             <p
               class='text-sm text-slate-600 hover:text-black dark:text-neutral-400 dark:hover:text-neutral-200
 '

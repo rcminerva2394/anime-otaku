@@ -15,11 +15,10 @@ const ShowAll = ({ prevData, url, title, location }) => {
   const { data, loading, error } = useDataFetcher(finalUrl);
 
   const updatePageHandler = (newPage) => {
-    const newPath = location.pathname.replace(/\/[^/]*$/, `/${newPage}`);
+    // const newPath = location.pathname.replace(/\/[^/]*$/, `/${newPage}`);
 
     // Update the URL with the new page number
-    window.history.pushState(null, null, newPath);
-    // currentPage = newPage;
+    // window.history.pushState(null, null, newPath);
 
     setPageInfo((prevPageInfo) => ({
       ...prevPageInfo,

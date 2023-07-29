@@ -52,19 +52,28 @@ function App() {
       </header>
       {isFiltering ? <Filter /> : ''}
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/anime-otaku' element={<Home />} />
         <Route
-          path='/search-results'
+          path='/anime-otaku/search-results'
           element={<FilterSearchResult url={url} />}
         />
-        <Route path='/genres' element={<Genres />} />
-        <Route path='/all-anime' element={<AllAnime />} />
-        <Route path='/anime-info/:id' element={<AnimeInfo />} />
-        <Route path='/all-characters/:id' element={<AllCharacters />} />
-        <Route path='/character-info/:id' element={<CharacterInfo />} />
-        <Route path='/popular-this-season/:page' element={<AllThisSeason />} />
-        <Route path='/upcoming/:page' element={<AllUpcoming />} />
-        <Route path='/top-100-anime/:page' element={<AllTop100Anime />} />
+        <Route path='/anime-otaku/genres' element={<Genres />} />
+        <Route path='/anime-otaku/all-anime' element={<AllAnime />} />
+        <Route path='/anime-otaku/anime-info/:id' element={<AnimeInfo />} />
+        <Route
+          path='/anime-otaku/all-characters/:id'
+          element={<AllCharacters />}
+        />
+        <Route
+          path='/anime-otaku/character-info/:id'
+          element={<CharacterInfo />}
+        />
+        <Route
+          path='/anime-otaku/popular-this-season'
+          element={<AllThisSeason />}
+        />
+        <Route path='/anime-otaku/upcoming' element={<AllUpcoming />} />
+        <Route path='/anime-otaku/top-100-anime' element={<AllTop100Anime />} />
       </Routes>
       <Footer />
     </>

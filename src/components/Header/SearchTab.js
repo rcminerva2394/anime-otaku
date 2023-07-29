@@ -12,14 +12,14 @@ const SearchTab = () => {
   const searchAnimeHandler = () => {
     setIsFiltering(true);
     setUrl(`${apiUrls.search}&q=${inputAnime}`);
-    navigate('/search-results');
+    navigate('/anime-otaku/search-results');
   };
 
   const keyPressHandler = (e) => {
     if (e.key === 'Enter') {
       setIsFiltering(true);
       setUrl(`${apiUrls.search}&q=${inputAnime}`);
-      navigate('/search-results');
+      navigate('/anime-otaku/search-results');
     }
   };
 
