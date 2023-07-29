@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/anime-otaku/static/css/main.6b1a62db.css",
-    "main.js": "/anime-otaku/static/js/main.326a5530.js",
+    "main.js": "/anime-otaku/static/js/main.69c87cd9.js",
     "static/media/logo-github.svg": "/anime-otaku/static/media/logo-github.c77e6dd58feeb738a5d4ee4800ccfffa.svg",
     "static/media/logo-linkedin.svg": "/anime-otaku/static/media/logo-linkedin.e37cb01808d6d8124792c2a3a379a0bd.svg",
     "index.html": "/anime-otaku/index.html",
     "main.6b1a62db.css.map": "/anime-otaku/static/css/main.6b1a62db.css.map",
-    "main.326a5530.js.map": "/anime-otaku/static/js/main.326a5530.js.map"
+    "main.69c87cd9.js.map": "/anime-otaku/static/js/main.69c87cd9.js.map"
   },
   "entrypoints": [
     "static/css/main.6b1a62db.css",
-    "static/js/main.326a5530.js"
+    "static/js/main.69c87cd9.js"
   ]
 }
