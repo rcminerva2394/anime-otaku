@@ -14,7 +14,7 @@ const AnimeCard = ({ anime, secTitle }) => {
   const randomNumber = Math.floor(Math.random() * 10) + 1;
 
   return (
-    <Link to={`/anime-info/${id}`}>
+    <Link to={`/anime-otaku/anime-info/${id}`}>
       <li class='relative'>
         {secTitle === 'Top 100 Anime' ? (
           <div
