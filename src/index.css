@@ -53,6 +53,11 @@
       padding: 1rem 2rem;
     }
   }
+
+  #root {
+    min-height: 100vh;
+    display: grid;
+  }
 }
 
 @tailwind components;

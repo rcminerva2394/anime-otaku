@@ -3,23 +3,27 @@ import AnimeList from './AnimeList';
 import Pagination from './Pagination';
 import useDataFetcher from '../customHooks/useDataFetcher';
 
-const ShowAll = ({ prevData, url, title }) => {
-  const { current_page: currentPage, last_visible_page: lastPage } =
-    prevData.pagination;
-  const [currentData, setCurrentData] = useState(prevData.data);
+const ShowAll = ({ prevData, url, title, location }) => {
   const [pageInfo, setPageInfo] = useState({
-    currentPage: currentPage,
-    lastPage: lastPage,
+    currentPage: prevData.pagination?.current_page || 1,
+    lastPage: prevData.pagination?.last_visible_page,
   });
+  const [currentData, setCurrentData] = useState(prevData.data);
 
   // To fetch data when the pageInfo is updated or when user choose specific page
   const finalUrl = `${url}&page=${pageInfo.currentPage}&sfw`;
   const { data, loading, error } = useDataFetcher(finalUrl);
 
-  const updatePageHandler = (page) => {
+  const updatePageHandler = (newPage) => {
+    const newPath = location.pathname.replace(/\/[^/]*$/, `/${newPage}`);
+
+    // Update the URL with the new page number
+    window.history.pushState(null, null, newPath);
+    // currentPage = newPage;
+
     setPageInfo((prevPageInfo) => ({
       ...prevPageInfo,
-      currentPage: page,
+      currentPage: newPage,
     }));
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -30,9 +34,28 @@ const ShowAll = ({ prevData, url, title }) => {
     }
   }, [data?.data]);
 
+  // Trying local storage
+
+  /*
+  useEffect(() => {
+    const getAnimeData = localStorage.getItem('animeData');
+    const loadedAnimeData = JSON.parse(getAnimeData);
+
+    if (loadedAnimeData) {
+      setCurrentData(loadedAnimeData);
+    }
+  }, []);
+
+  useEffect(() => {
+    const saveAnimeData = JSON.stringify(currentData);
+    localStorage.setItem('animeData', saveAnimeData);
+  }, [currentData]);
+
+  */
   if (data) {
     return (
       <>
+        {console.log(prevData)}
         <section class='my-24 grid justify-items-center'>
           <div class='xl:w-4/5'>
             <p class='text-xl font-bold mb-12 uppercase'>{title}</p>

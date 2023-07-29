@@ -8,7 +8,17 @@ const AllThisSeason = () => {
   const prevData = location.state?.data;
   const url = apiUrls.season;
 
-  return <ShowAll prevData={prevData} url={url} title='Popular This Season' />;
+  return (
+    <>
+      {console.log(location.pathname)}
+      <ShowAll
+        prevData={prevData}
+        url={url}
+        title='Popular This Season'
+        location={location}
+      />
+    </>
+  );
 };
 
 export default AllThisSeason;

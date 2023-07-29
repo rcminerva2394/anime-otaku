@@ -1,12 +1,12 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import ThisSeasonPrev from './ThisSeasonPrev';
 import UpcomingPrev from './UpcomingPrev';
 import TopAnimePrev from './TopAnime/TopAnimePrev';
 import Schedules from './Schedules/Schedules';
-import IsFilterContext from '../../contexts/IsFilterContext';
+import { useAnimeContext } from '../../contexts/animeContext';
 
 const Home = () => {
-  const { setIsFiltering } = useContext(IsFilterContext);
+  const { setIsFiltering } = useAnimeContext();
 
   // To hide the filter component, whenever home is mounted especially when they go back or click back on window
   useEffect(() => {

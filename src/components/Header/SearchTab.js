@@ -1,14 +1,12 @@
-import React, { useState, useContext } from 'react';
-import FilterContext from '../../contexts/IsFilterContext';
-import SearchFilterContext from '../../contexts/SearchFilterContext';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import apiUrls from '../../constants/apiUrls';
+import { useAnimeContext } from '../../contexts/animeContext';
 
 const SearchTab = () => {
   const navigate = useNavigate();
-  const { setIsFiltering } = useContext(FilterContext);
-  const { setUrl } = useContext(SearchFilterContext);
+  const { setIsFiltering, setUrl } = useAnimeContext();
   const [inputAnime, setInputName] = useState('');
 
   const searchAnimeHandler = () => {

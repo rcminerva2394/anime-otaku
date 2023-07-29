@@ -1,15 +1,16 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import useDataFetcher from '../../customHooks/useDataFetcher';
 import AnimeDesc from './AnimeDesc';
 import CharactersPrev from './Characters/CharactersPrev';
-import IsFilterContext from '../../contexts/IsFilterContext';
+import { useAnimeContext } from '../../contexts/animeContext';
 
 const AnimeInfo = () => {
   const { id } = useParams();
   const url = `https://api.jikan.moe/v4/anime/${id}`;
   const { data, loading, error } = useDataFetcher(url);
-  const { setIsFiltering } = useContext(IsFilterContext);
+
+  const { setIsFiltering } = useAnimeContext();
 
   // To hide the filter component, whenever home is mounted especially when they go back or click back on window
   useEffect(() => {

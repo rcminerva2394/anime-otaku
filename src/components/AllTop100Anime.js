@@ -8,7 +8,14 @@ const AllTop100Anime = () => {
   const prevData = location.state?.data;
   const url = apiUrls.top;
 
-  return <ShowAll prevData={prevData} url={url} title='Top 100 Anime' />;
+  return (
+    <ShowAll
+      prevData={prevData}
+      url={url}
+      title='Top 100 Anime'
+      location={location}
+    />
+  );
 };
 
 export default AllTop100Anime;

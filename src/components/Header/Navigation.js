@@ -1,11 +1,11 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MoonIcon, SunIcon } from '@heroicons/react/24/solid';
 import { Link } from 'react-router-dom';
-import IsFilterContext from '../../contexts/IsFilterContext';
+import { useAnimeContext } from '../../contexts/animeContext';
 import { genres } from '../../constants/queryParams';
 
 const Navigation = ({ isShowMenu }) => {
-  const { setIsFiltering } = useContext(IsFilterContext);
+  const { setIsFiltering } = useAnimeContext();
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const { showMenu, setShowMenu } = isShowMenu;
@@ -43,7 +43,7 @@ const Navigation = ({ isShowMenu }) => {
 
   return (
     <>
-      <nav class='mobile-nav lg:desktop-nav '>
+      <nav class='lg:self-start mobile-nav lg:desktop-nav '>
         <ul class='flex flex-col items-center lg:flex-row justify-evenly gap-x-10 lg:text-slate-500'>
           <li>
             <Link

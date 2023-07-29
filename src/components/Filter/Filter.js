@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   genres,
   statuses,
@@ -6,11 +6,11 @@ import {
   types,
   order_by,
 } from '../../constants/queryParams';
-import SearchFilterContext from '../../contexts/SearchFilterContext';
+import { useAnimeContext } from '../../contexts/animeContext';
 import apiUrls from '../../constants/apiUrls';
 
 const Filter = () => {
-  const { setUrl } = useContext(SearchFilterContext);
+  const { setUrl } = useAnimeContext();
 
   const queryParamObj = {
     url: apiUrls.search,

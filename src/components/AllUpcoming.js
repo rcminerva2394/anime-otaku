@@ -8,7 +8,14 @@ const AllUpcoming = () => {
   const prevData = location.state?.data;
   const url = apiUrls.upcoming;
 
-  return <ShowAll prevData={prevData} url={url} title='Upcoming' />;
+  return (
+    <ShowAll
+      prevData={prevData}
+      url={url}
+      title='Upcoming'
+      location={location}
+    />
+  );
 };
 
 export default AllUpcoming;

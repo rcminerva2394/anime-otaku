@@ -1,11 +1,11 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import useDataFetcher from '../../customHooks/useDataFetcher';
 import ShowAll from '../../UI/ShowAll';
-import IsFilterContext from '../../contexts/IsFilterContext';
+import { useAnimeContext } from '../../contexts/animeContext';
 
 const FilterSearchResult = ({ url }) => {
   const { data, isLoading, error } = useDataFetcher(url);
-  const { setIsFiltering } = useContext(IsFilterContext);
+  const { setIsFiltering } = useAnimeContext();
 
   // To hide the filter component, whenever home is mounted especially when they go back or click back on window
   useEffect(() => {
@@ -13,6 +13,7 @@ const FilterSearchResult = ({ url }) => {
   }, []);
 
   if (data) {
+    console.log(setIsFiltering);
     return <ShowAll prevData={data} url={url} title='Search Results' />;
   }
 

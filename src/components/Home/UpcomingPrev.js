@@ -14,7 +14,7 @@ const UpcomingPrev = () => {
       <section class='my-20'>
         <div class='flex justify-between mb-6 items-center'>
           <h2 class='uppercase font-bold text-lg'>Upcoming</h2>
-          <Link to={'/upcoming'} state={{ data: data }}>
+          <Link to={'/upcoming/1'} state={{ data: data }}>
             <p class='text-sm text-slate-600 hover:text-black dark:text-neutral-400 dark:hover:text-neutral-200'>
               View All
             </p>

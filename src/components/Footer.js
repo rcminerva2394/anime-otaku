@@ -4,7 +4,7 @@ import { ReactComponent as LinkedinIcon } from '../assets/logos/logo-linkedin.sv
 
 const Footer = () => {
   return (
-    <footer class='flex justify-between flex-wrap items-center mt-48 gap-4'>
+    <footer class='self-end flex justify-between flex-wrap items-center mt-48 gap-4'>
       <div class='mr-4'>
         <p class='font-lily text-4xl xl:text-5xl'>AnimeOtaku</p>
         <p class='text-xs wrap lg:text-base'>
