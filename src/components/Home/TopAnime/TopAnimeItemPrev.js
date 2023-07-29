@@ -23,7 +23,7 @@ const TopAnimeItemPrev = ({ anime }) => {
         <p class='text-white text-3xl font-bebas'>{rank}</p>
       </div>
 
-      <Link to={`/anime-info/${id}`}>
+      <Link to={`/anime-otaku/anime-info/${id}`}>
         <div class='flex flex-wrap gap-5 items-center sm:flex-nowrap'>
           <img
             src={images.webp.large_image_url}
