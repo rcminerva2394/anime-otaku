@@ -1,20 +1,31 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 import ShowAll from '../UI/ShowAll';
-import apiUrls from '../constants/apiUrls';
+import {
+  AnimeContextProvider,
+  useAnimeContext,
+} from '../contexts/animeContext';
+
+const AllTop100AnimeInner = () => {
+  const { topData, topLoading, topError } = useAnimeContext();
+
+  if (topData) {
+    return <ShowAll prevData={topData} title='Top 100 Anime' />;
+  }
+
+  if (topLoading) {
+    return <p>Still loading</p>;
+  }
+
+  if (topError) {
+    return <p>{topError.message}</p>;
+  }
+};
 
 const AllTop100Anime = () => {
-  const location = useLocation();
-  const prevData = location.state?.data;
-  const url = apiUrls.top;
-
   return (
-    <ShowAll
-      prevData={prevData}
-      url={url}
-      title='Top 100 Anime'
-      location={location}
-    />
+    <AnimeContextProvider>
+      <AllTop100AnimeInner />
+    </AnimeContextProvider>
   );
 };
 

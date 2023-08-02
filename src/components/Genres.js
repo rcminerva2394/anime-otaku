@@ -1,27 +1,35 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import apiUrls from '../constants/apiUrls';
-import useDataFetcher from '../customHooks/useDataFetcher';
 import ShowAll from '../UI/ShowAll';
+import {
+  AnimeContextProvider,
+  useAnimeContext,
+} from '../contexts/animeContext';
 
-const Genres = () => {
+const GenresInner = () => {
+  const { genreData, genreLoading, genreError } = useAnimeContext();
   const location = useLocation();
-  const genreID = location.state?.id;
   const title = location.state?.title;
-  const genreUrl = `${apiUrls.search}genres=${genreID}`;
-  const { data, loading, error } = useDataFetcher(genreUrl);
 
-  if (data) {
-    return <ShowAll prevData={data} url={genreUrl} title={title} />;
+  if (genreData) {
+    return <ShowAll prevData={genreData} title={title} />;
   }
 
-  if (loading) {
+  if (genreLoading) {
     return <p>Still loading</p>;
   }
 
-  if (error) {
-    return <p>Sorry!</p>;
+  if (genreError) {
+    return <p>{genreError.message}</p>;
   }
+};
+
+const Genres = () => {
+  return (
+    <AnimeContextProvider>
+      <GenresInner />
+    </AnimeContextProvider>
+  );
 };
 
 export default Genres;

@@ -1,20 +1,31 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 import ShowAll from '../UI/ShowAll';
-import apiUrls from '../constants/apiUrls';
+import {
+  AnimeContextProvider,
+  useAnimeContext,
+} from '../contexts/animeContext';
+
+const AllUpcomingInner = () => {
+  const { upcomingData, upcomingLoading, upcomingError } = useAnimeContext();
+
+  if (upcomingData) {
+    return <ShowAll prevData={upcomingData} title='Upcoming' />;
+  }
+
+  if (upcomingLoading) {
+    return <p>Still loading</p>;
+  }
+
+  if (upcomingError) {
+    return <p>{upcomingError.message}</p>;
+  }
+};
 
 const AllUpcoming = () => {
-  const location = useLocation();
-  const prevData = location.state?.data;
-  const url = apiUrls.upcoming;
-
   return (
-    <ShowAll
-      prevData={prevData}
-      url={url}
-      title='Upcoming'
-      location={location}
-    />
+    <AnimeContextProvider>
+      <AllUpcomingInner />
+    </AnimeContextProvider>
   );
 };
 

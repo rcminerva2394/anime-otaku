@@ -65,7 +65,9 @@ const Navigation = ({ isShowMenu }) => {
               <ul class='absolute bg-gradient-to-r from-slate-600 to-slate-900 z-10 py-4 px-6 lg:w-full xl:w-8/12 lg:h-96 overflow-scroll grid text-sm lg:text-base w-auto h-72  lg:grid-cols-3 gap-2 -translate-x-1/2 lg:-translate-x-3/4 border'>
                 {genres.map((genre) => (
                   <Link
-                    to='/anime-otaku/genres'
+                    to={`/anime-otaku/genres/${
+                      genre.mal_id
+                    }/${genre.name.toLowerCase()}/1`}
                     onClick={isFilteringHandler}
                     state={{ id: genre.mal_id, title: genre.name }}
                   >

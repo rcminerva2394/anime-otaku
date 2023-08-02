@@ -8,10 +8,10 @@ import { AnimeContextProvider } from './contexts/animeContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AnimeContextProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <AnimeContextProvider>
         <App />
-      </BrowserRouter>
-    </AnimeContextProvider>
+      </AnimeContextProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );

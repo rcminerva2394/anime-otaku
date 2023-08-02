@@ -54,10 +54,13 @@ function App() {
       <Routes>
         <Route path='/anime-otaku' element={<Home />} />
         <Route
-          path='/anime-otaku/search-results'
-          element={<FilterSearchResult url={url} />}
+          path='/anime-otaku/search-results/:page'
+          element={<FilterSearchResult />}
         />
-        <Route path='/anime-otaku/genres' element={<Genres />} />
+        <Route
+          path='/anime-otaku/genres/:genreId/:genreName/:page'
+          element={<Genres />}
+        />
         <Route path='/anime-otaku/all-anime' element={<AllAnime />} />
         <Route path='/anime-otaku/anime-info/:id' element={<AnimeInfo />} />
         <Route
@@ -69,11 +72,14 @@ function App() {
           element={<CharacterInfo />}
         />
         <Route
-          path='/anime-otaku/popular-this-season'
+          path='/anime-otaku/popular-this-season/:page'
           element={<AllThisSeason />}
         />
-        <Route path='/anime-otaku/upcoming' element={<AllUpcoming />} />
-        <Route path='/anime-otaku/top-100-anime' element={<AllTop100Anime />} />
+        <Route path='/anime-otaku/upcoming/:page' element={<AllUpcoming />} />
+        <Route
+          path='/anime-otaku/top-100-anime/:page'
+          element={<AllTop100Anime />}
+        />
       </Routes>
       <Footer />
     </>

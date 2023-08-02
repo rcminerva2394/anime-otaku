@@ -6,10 +6,13 @@ import {
   types,
   order_by,
 } from '../../constants/queryParams';
-import { useAnimeContext } from '../../contexts/animeContext';
+import {
+  useAnimeContext,
+  AnimeContextProvider,
+} from '../../contexts/animeContext';
 import apiUrls from '../../constants/apiUrls';
 
-const Filter = () => {
+const FilterInner = () => {
   const { setUrl } = useAnimeContext();
 
   const queryParamObj = {
@@ -190,6 +193,14 @@ const Filter = () => {
         </select>
       </div>
     </section>
+  );
+};
+
+const Filter = () => {
+  return (
+    <AnimeContextProvider>
+      <FilterInner />
+    </AnimeContextProvider>
   );
 };
 
