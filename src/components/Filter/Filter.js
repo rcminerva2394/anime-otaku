@@ -6,14 +6,13 @@ import {
   types,
   order_by,
 } from '../../constants/queryParams';
-import {
-  useAnimeContext,
-  AnimeContextProvider,
-} from '../../contexts/animeContext';
+import { useAnimeContext } from '../../contexts/animeContext';
 import apiUrls from '../../constants/apiUrls';
+import { useNavigate } from 'react-router-dom';
 
-const FilterInner = () => {
-  const { setUrl } = useAnimeContext();
+const Filter = () => {
+  const { setUrl, url } = useAnimeContext();
+  const navigate = useNavigate();
 
   const queryParamObj = {
     url: apiUrls.search,
@@ -39,8 +38,9 @@ const FilterInner = () => {
 
   useEffect(() => {
     setUrl(queryParams.getUrl());
-    console.log(queryParams.getUrl());
-  }, [queryParams, setUrl]);
+    console.log(url);
+    navigate('/anime-otaku/search-results/1');
+  }, [queryParams]);
 
   return (
     <section class='flex justify-center flex-wrap mt-24 gap-4'>
@@ -193,14 +193,6 @@ const FilterInner = () => {
         </select>
       </div>
     </section>
-  );
-};
-
-const Filter = () => {
-  return (
-    <AnimeContextProvider>
-      <FilterInner />
-    </AnimeContextProvider>
   );
 };
 

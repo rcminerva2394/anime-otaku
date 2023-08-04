@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react';
 import useDataFetcher from '../../customHooks/useDataFetcher';
 import ShowAll from '../../UI/ShowAll';
-import {
-  useAnimeContext,
-  AnimeContextProvider,
-} from '../../contexts/animeContext';
+import { useAnimeContext } from '../../contexts/animeContext';
 
-const FilterSearchResultInner = () => {
-  const { setIsFiltering, url } = useAnimeContext();
-  const { data, isLoading, error } = useDataFetcher(url);
+// const FilterSearchInner = () => {
 
+// };
+
+const FilterSearchResult = () => {
+  const { setIsFiltering, url, searchData, searchLoading, searchError } =
+    useAnimeContext();
+  // const { data, isLoading, error } = useDataFetcher(url);
+
+  console.log(url);
   // console.log(searchData);
 
   // // To hide the filter component, whenever home is mounted especially when they go back or click back on window
@@ -17,17 +20,17 @@ const FilterSearchResultInner = () => {
     setIsFiltering(true);
   }, []);
 
-  // if (searchData) {
-  //   return <ShowAll prevData={searchData} title='Search Results' />;
-  // }
+  if (searchData) {
+    return <ShowAll prevData={searchData} title='Search Results' />;
+  }
 
-  // if (searchLoading) {
-  //   return <p>Still loading</p>;
-  // }
+  if (searchLoading) {
+    return <p>Still loading</p>;
+  }
 
-  // if (searchError) {
-  //   return <p>{searchError.message}</p>;
-  // }
+  if (searchError) {
+    return <p>{searchError.message}</p>;
+  }
 
   // console.log(data);
   // if (data) {
@@ -41,14 +44,6 @@ const FilterSearchResultInner = () => {
   // if (error) {
   //   return <p>Sorry!</p>;
   // }
-};
-
-const FilterSearchResult = () => {
-  return (
-    <AnimeContextProvider>
-      <FilterSearchResultInner />
-    </AnimeContextProvider>
-  );
 };
 
 export default FilterSearchResult;
