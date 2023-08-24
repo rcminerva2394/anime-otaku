@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import useDataFetcher from '../customHooks/useDataFetcher';
+import useDataFetcher from '../hooks/useDataFetcher';
 import apiUrls from '../constants/apiUrls';
 import ShowAll from '../UI/ShowAll';
 
@@ -22,20 +22,20 @@ const AllAnime = () => {
 
   if (data)
     return (
-      <div class='flex flex-col justify-center'>
-        <div class='bg-gradient-to-r from-stone-50 to-stone-200 py-4 px-6 flex flex-wrap gap-2 self-center rounded-lg mt-20 lg:w-3/4 xl:w-1/2 dark:from-neutral-700 dark:to-neutral-800'>
+      <div className='flex flex-col justify-center'>
+        <div className='bg-gradient-to-r from-stone-50 to-stone-200 py-4 px-6 flex flex-wrap gap-2 self-center rounded-lg mt-20 lg:w-3/4 xl:w-1/2 dark:from-neutral-700 dark:to-neutral-800'>
           <input
             type='button'
             value='All'
             onClick={btnAllHandler}
-            class='cursor-pointer bg-dark-gray hover:bg-dark-gray-1 w-10 text-2xl dark:text-black'
+            className='cursor-pointer bg-dark-gray hover:bg-dark-gray-1 w-10 text-2xl dark:text-black'
           />
           {alphabet.map((letter) => (
             <input
               type='button'
               value={letter.toUpperCase()}
               onClick={() => btnLettersHandler(letter.toUpperCase())}
-              class='cursor-pointer bg-dark-gray hover:bg-dark-gray-1 w-10 text-2xl dark:text-black'
+              className='cursor-pointer bg-dark-gray hover:bg-dark-gray-1 w-10 text-2xl dark:text-black'
             />
           ))}
         </div>

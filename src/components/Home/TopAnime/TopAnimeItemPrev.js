@@ -16,34 +16,34 @@ const TopAnimeItemPrev = ({ anime }) => {
   } = anime;
 
   return (
-    <li class='relative'>
+    <li className='relative'>
       <div
-        class={`w-12 h-12 ${TOP_ANIME_COLORS[rank]} flex justify-center items-center absolute`}
+        className={`w-12 h-12 ${TOP_ANIME_COLORS[rank]} flex justify-center items-center absolute`}
       >
-        <p class='text-white text-3xl font-bebas'>{rank}</p>
+        <p className='text-white text-3xl font-bebas'>{rank}</p>
       </div>
 
       <Link to={`/anime-otaku/anime-info/${id}`}>
-        <div class='flex flex-wrap gap-5 items-center sm:flex-nowrap'>
+        <div className='flex flex-wrap gap-5 items-center sm:flex-nowrap'>
           <img
             src={images.webp.large_image_url}
             alt={englishTitle ? englishTitle : title}
-            class='bg-cover w-40'
+            className='bg-cover w-40'
           />
           <div>
-            <p class='font-medium text-lg'>
+            <p className='font-medium text-lg'>
               {' '}
               {englishTitle ? englishTitle : title}
             </p>
             <p> From {aired.string}</p>
-            <p class='font-light'>
+            <p className='font-light'>
               {type} | {episodes} episodes
             </p>
-            <ul class='flex gap-2 flex-wrap mt-3 mb-6'>
+            <ul className='flex gap-2 flex-wrap mt-3 mb-6'>
               {genres.map((genre) => (
                 <li
                   key={genre['mal_id']}
-                  class={`${TOP_ANIME_COLORS[rank]} rounded-full text-center text-white px-2 py-1 inline font-medium text-sm`}
+                  className={`${TOP_ANIME_COLORS[rank]} rounded-full text-center text-white px-2 py-1 inline font-medium text-sm`}
                 >
                   {genre.name}
                 </li>

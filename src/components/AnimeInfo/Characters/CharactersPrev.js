@@ -1,5 +1,5 @@
 import React from 'react';
-import useDataFetcher from '../../../customHooks/useDataFetcher';
+import useDataFetcher from '../../../hooks/useDataFetcher';
 import Characters from '../../../UI/Characters';
 
 import { Link } from 'react-router-dom';
@@ -13,10 +13,10 @@ const CharactersPrev = ({ id }) => {
   if (data) {
     mainChars = data.data.filter((character) => character.role === 'Main');
     return (
-      <section class='my-24 xl:w-4/5'>
-        <div class='flex justify-between items-center mb-3'>
+      <section className='my-24 xl:w-4/5'>
+        <div className='flex justify-between items-center mb-3'>
           {data.data.length !== 0 ? (
-            <p class='text-lg font-medium uppercase'> Characters</p>
+            <p className='text-lg font-medium uppercase'> Characters</p>
           ) : (
             ''
           )}
@@ -25,7 +25,7 @@ const CharactersPrev = ({ id }) => {
               to={`/anime-otaku/all-characters/${id}`}
               state={{ data: data.data }}
             >
-              <p class='text-sm text-slate-600 hover:text-black dark:text-neutral-400 dark:hover:text-neutral-200'>
+              <p className='text-sm text-slate-600 hover:text-black dark:text-neutral-400 dark:hover:text-neutral-200'>
                 View All
               </p>
             </Link>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import useDataFetcher from '../../../customHooks/useDataFetcher';
+import useDataFetcher from '../../../hooks/useDataFetcher';
 
 const CharacterInfo = () => {
   const { id } = useParams;

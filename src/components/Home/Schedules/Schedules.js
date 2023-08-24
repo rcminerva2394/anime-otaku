@@ -23,14 +23,14 @@ const Schedules = () => {
 
   return (
     <section
-      class='my-20 bg-gradient-to-r from-stone-50 to-stone-200 p-2 sm:p-8 dark:from-neutral-700 dark:to-neutral-800
+      className='my-20 bg-gradient-to-r from-stone-50 to-stone-200 p-2 sm:p-8 dark:from-neutral-700 dark:to-neutral-800
 '
     >
-      <h2 class='uppercase font-bold mb-4 text-lg'>Schedules</h2>
-      <div class='flex gap-2 mt-6 flex-wrap'>
+      <h2 className='uppercase font-bold mb-4 text-lg'>Schedules</h2>
+      <div className='flex gap-2 mt-6 flex-wrap'>
         {days.map((day, i) => (
           <button
-            class={
+            className={
               day === activeDay
                 ? 'bg-darker-gray text-white py-2 px-4 rounded-lg'
                 : 'bg-dark-gray py-2 px-4 rounded-lg hover:bg-dark-gray-1 dark:text-black'

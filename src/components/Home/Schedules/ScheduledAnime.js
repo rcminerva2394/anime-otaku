@@ -5,7 +5,7 @@ const ScheduledAnime = ({ anime }) => {
   return (
     <>
       <li
-        class='bg-white py-3 px-6 shadow-lg rounded dark:bg-neutral-900
+        className='bg-white py-3 px-6 shadow-lg rounded dark:bg-neutral-900
 '
       >
         {title}

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import useDataFetcher from '../../customHooks/useDataFetcher';
+import useDataFetcher from '../../hooks/useDataFetcher';
 import ShowAll from '../../UI/ShowAll';
 import { useAnimeContext } from '../../contexts/animeContext';
 

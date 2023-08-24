@@ -11,9 +11,9 @@ const AllCharacters = () => {
   }, []);
 
   return (
-    <section class='my-24 grid justify-items-center'>
-      <div class='xl:w-4/5'>
-        <p class='text-xl font-bold mb-12 uppercase'> Characters</p>
+    <section className='my-24 grid justify-items-center'>
+      <div className='xl:w-4/5'>
+        <p className='text-xl font-bold mb-12 uppercase'> Characters</p>
         <Characters data={data} />
       </div>
     </section>

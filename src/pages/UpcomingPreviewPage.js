@@ -1,11 +1,11 @@
 import React from 'react';
-import useDataFetcher from '../../hooks/useDataFetcher';
-import AnimeList from '../../UI/AnimeList';
+import useDataFetcher from '../hooks/useDataFetcher';
+import AnimeList from '../UI/AnimeList';
 import { Link } from 'react-router-dom';
-import apiUrls from '../../constants/apiUrls';
+import apiUrls from '../constants/apiUrls';
 
-const ThisSeasonPrev = () => {
-  const url = apiUrls.season;
+const UpcomingPreviewPage = () => {
+  const url = apiUrls.upcoming;
   const { data, loading, error } = useDataFetcher(url);
 
   if (data) {
@@ -13,11 +13,8 @@ const ThisSeasonPrev = () => {
     return (
       <section className='my-20'>
         <div className='flex justify-between mb-6 items-center'>
-          <h2 className='uppercase font-bold text-lg'>Popular This Season</h2>
-          <Link
-            to={'/anime-otaku/popular-this-season/1'}
-            state={{ data: data }}
-          >
+          <h2 className='uppercase font-bold text-lg'>Upcoming</h2>
+          <Link to={'/anime-otaku/upcoming/1'} state={{ data: data }}>
             <p className='text-sm text-slate-600 hover:text-black dark:text-neutral-400 dark:hover:text-neutral-200'>
               View All
             </p>
@@ -37,4 +34,4 @@ const ThisSeasonPrev = () => {
   }
 };
 
-export default ThisSeasonPrev;
+export default UpcomingPreviewPage;

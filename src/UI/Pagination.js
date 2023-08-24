@@ -30,13 +30,16 @@ const Pagination = ({ pageInfo, onPage }) => {
   return (
     <>
       {console.log(pageArr, page)}
-      <div class='mt-20 flex gap-4 text-lg'>
+      <div className='mt-20 flex gap-4 text-lg'>
         {pageArr.map((currentPage) => {
           if (Number(page) === currentPage) {
-            return <button class='font-medium'>{currentPage}</button>;
+            return <button className='font-medium'>{currentPage}</button>;
           } else {
             return (
-              <button class='btn-page' onClick={buttonHandlers[currentPage]}>
+              <button
+                className='btn-page'
+                onClick={buttonHandlers[currentPage]}
+              >
                 {currentPage}
               </button>
             );

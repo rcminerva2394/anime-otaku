@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import useDataFetcher from '../../customHooks/useDataFetcher';
+import useDataFetcher from '../../hooks/useDataFetcher';
 import AnimeDesc from './AnimeDesc';
 import CharactersPrev from './Characters/CharactersPrev';
 import { useAnimeContext } from '../../contexts/animeContext';
@@ -19,7 +19,7 @@ const AnimeInfo = () => {
 
   if (data) {
     return (
-      <main class='grid justify-items-center py-24 gap-y-8'>
+      <main className='grid justify-items-center py-24 gap-y-8'>
         <AnimeDesc info={data.data} />
         <CharactersPrev id={id} />
       </main>

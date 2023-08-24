@@ -1,10 +1,10 @@
 import React from 'react';
-import useDataFetcher from '../../hooks/useDataFetcher';
-import AnimeList from '../../UI/AnimeList';
+import useDataFetcher from '../hooks/useDataFetcher';
+import AnimeList from '../UI/AnimeList';
+import apiUrls from '../constants/apiUrls';
 import { Link } from 'react-router-dom';
-import apiUrls from '../../constants/apiUrls';
 
-const ThisSeasonPrev = () => {
+const PopularThisSeasonPreviewPage = () => {
   const url = apiUrls.season;
   const { data, loading, error } = useDataFetcher(url);
 
@@ -37,4 +37,4 @@ const ThisSeasonPrev = () => {
   }
 };
 
-export default ThisSeasonPrev;
+export default PopularThisSeasonPreviewPage;

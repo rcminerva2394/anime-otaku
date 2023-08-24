@@ -1,5 +1,5 @@
 import React from 'react';
-import useDataFetcher from '../../customHooks/useDataFetcher';
+import useDataFetcher from '../../hooks/useDataFetcher';
 import AnimeList from '../../UI/AnimeList';
 import { Link } from 'react-router-dom';
 import apiUrls from '../../constants/apiUrls';
@@ -11,11 +11,11 @@ const UpcomingPrev = () => {
   if (data) {
     const prevData = data.data.slice(0, 8);
     return (
-      <section class='my-20'>
-        <div class='flex justify-between mb-6 items-center'>
-          <h2 class='uppercase font-bold text-lg'>Upcoming</h2>
+      <section className='my-20'>
+        <div className='flex justify-between mb-6 items-center'>
+          <h2 className='uppercase font-bold text-lg'>Upcoming</h2>
           <Link to={'/anime-otaku/upcoming/1'} state={{ data: data }}>
-            <p class='text-sm text-slate-600 hover:text-black dark:text-neutral-400 dark:hover:text-neutral-200'>
+            <p className='text-sm text-slate-600 hover:text-black dark:text-neutral-400 dark:hover:text-neutral-200'>
               View All
             </p>
           </Link>

@@ -9,6 +9,7 @@ import {
 import { useAnimeContext } from '../../contexts/animeContext';
 import apiUrls from '../../constants/apiUrls';
 import { useNavigate } from 'react-router-dom';
+import Input from '../../UI/Input';
 
 const Filter = () => {
   const { setUrl, url } = useAnimeContext();
@@ -43,12 +44,11 @@ const Filter = () => {
   }, [queryParams]);
 
   return (
-    <section class='flex justify-center flex-wrap mt-24 gap-4'>
-      <div class='grid grid-cols-3 items-center lg:flex lg:flex-col lg:gap-2 lg:items-start'>
+    <section className='flex justify-center flex-wrap mt-24 gap-4'>
+      <div className='grid grid-cols-3 items-center lg:flex lg:flex-col lg:gap-2 lg:items-start'>
         <label for='search'>Search</label>
-        <input
+        <Input
           id='search'
-          type='text'
           value={queryParams.q}
           onChange={(e) =>
             setQueryParams((prevState) => {
@@ -58,14 +58,12 @@ const Filter = () => {
               };
             })
           }
+          className='py-2 px-4 h-9 col-span-2'
           placeholder='Search'
-          class='py-2 px-4 h-9 col-span-2 dark:placeholder-neutral-400 dark:bg-neutral-700
-
-'
         />
       </div>
 
-      <div class='grid grid-cols-3 items-center lg:flex lg:flex-col lg:gap-2 lg:items-start'>
+      <div className='grid grid-cols-3 items-center lg:flex lg:flex-col lg:gap-2 lg:items-start'>
         <label for='genres'>Genre</label>
         <select
           id='genres'
@@ -83,14 +81,18 @@ const Filter = () => {
             All
           </option>
           {genres.map((genre) => (
-            <option key={genre.mal_id} value={genre.mal_id} class='text-black'>
+            <option
+              key={genre.mal_id}
+              value={genre.mal_id}
+              className='text-black'
+            >
               {genre.name}
             </option>
           ))}
         </select>
       </div>
 
-      <div class='grid grid-cols-3 items-center lg:flex lg:flex-col lg:gap-2 lg:items-start'>
+      <div className='grid grid-cols-3 items-center lg:flex lg:flex-col lg:gap-2 lg:items-start'>
         <label for='status'>Status</label>
         <select
           id='status'
@@ -108,14 +110,18 @@ const Filter = () => {
             All
           </option>
           {statuses.map((status) => (
-            <option key={status.label} value={status.value} class='text-black'>
+            <option
+              key={status.label}
+              value={status.value}
+              className='text-black'
+            >
               {status.label}
             </option>
           ))}
         </select>
       </div>
 
-      <div class='grid grid-cols-3 items-center lg:flex lg:flex-col lg:gap-2 lg:items-start'>
+      <div className='grid grid-cols-3 items-center lg:flex lg:flex-col lg:gap-2 lg:items-start'>
         <label for='rating'>Rating</label>
         <select
           id='rating'
@@ -133,14 +139,18 @@ const Filter = () => {
             Default
           </option>
           {ratings.map((rating) => (
-            <option key={rating.label} value={rating.value} class='text-black'>
+            <option
+              key={rating.label}
+              value={rating.value}
+              className='text-black'
+            >
               {rating.label}
             </option>
           ))}
         </select>
       </div>
 
-      <div class='grid grid-cols-3 items-center lg:flex lg:flex-col lg:gap-2 lg:items-start'>
+      <div className='grid grid-cols-3 items-center lg:flex lg:flex-col lg:gap-2 lg:items-start'>
         <label for='type'>Type</label>
         <select
           id='type'
@@ -158,13 +168,13 @@ const Filter = () => {
             Default
           </option>
           {types.map((type) => (
-            <option key={type.label} value={type.value} class='text-black'>
+            <option key={type.label} value={type.value} className='text-black'>
               {type.label}
             </option>
           ))}
         </select>
       </div>
-      <div class='grid grid-cols-3 items-center lg:flex lg:flex-col lg:gap-2 lg:items-start'>
+      <div className='grid grid-cols-3 items-center lg:flex lg:flex-col lg:gap-2 lg:items-start'>
         <label for='order_by'>Order by</label>
         <select
           for='order_by'
@@ -185,7 +195,7 @@ const Filter = () => {
             <option
               key={order_byItem.label}
               value={order_byItem.value}
-              class='text-black'
+              className='text-black'
             >
               {order_byItem.label}
             </option>

@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useState, useContext } from 'react';
 import { useLocation, useParams, useNavigate } from 'react-router-dom';
 import apiUrls from '../constants/apiUrls';
-import useDataFetcher from '../customHooks/useDataFetcher';
-import SearchTab from '../components/Header/SearchTab';
+import useDataFetcher from '../hooks/useDataFetcher';
 
-const AnimeContext = React.createContext(null);
+export const AnimeContext = React.createContext(null);
 
 export const AnimeContextProvider = ({ children }) => {
   const [isFiltering, setIsFiltering] = useState(false);
