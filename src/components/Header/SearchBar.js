@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import Input from '../../UI/Input';
 
-const SearchBar = ({ onSearchAnime, onKeyPress }) => {
+const SearchBar = ({ onSearchAnime, onKeyPress, ...rest }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   return (
@@ -18,6 +18,7 @@ const SearchBar = ({ onSearchAnime, onKeyPress }) => {
         className='w-6 h-6 text-gray hover:text-black dark:text-neutral-400 dark:hover:text-neutral-200'
         tabIndex={0}
         onClick={() => onSearchAnime(searchTerm)}
+        {...rest}
       />
     </div>
   );

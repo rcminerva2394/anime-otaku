@@ -1,12 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import {
-  Bars4Icon,
-  XMarkIcon,
-  MoonIcon,
-  SunIcon,
-} from '@heroicons/react/24/solid';
+import { Bars4Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import SearchBarPage from '../../pages/SearchBarPage';
 import Navigation from './Navigation';
+import ToggleDarkMode from './ToggleDarkMode';
 
 const Header = () => {
   // To display hamburger menu icon
@@ -29,23 +25,6 @@ const Header = () => {
     }
   }, [showMenuBar]);
 
-  // For toggling dark mode
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    setShowMenuBar((prevState) => !prevState);
-  };
-
-  const htmlRef = useRef(document.documentElement);
-  useEffect(() => {
-    if (isDarkMode) {
-      htmlRef.current.classList.add('dark');
-    } else {
-      htmlRef.current.classList.remove('dark');
-    }
-  }, [isDarkMode]);
-
   return (
     <header className='flex flex-col lg:flex-row lg:justify-between gap-y-4 2xl:items-center'>
       <div className='lg:self-start flex items-center justify-between'>
@@ -61,17 +40,7 @@ const Header = () => {
       </div>
       <div className='lg:self-start mobile-nav lg:desktop-nav' ref={menuBarRef}>
         <Navigation isShowMenu={{ showMenuBar, setShowMenuBar }} />
-        {isDarkMode ? (
-          <SunIcon
-            className='w-6 h-6 lg:ml-10 text-neutral-600 hover:text-neutral-700 dark:text-neutral-400  dark:hover:text-neutral-200 justify-self-center'
-            onClick={toggleDarkMode}
-          />
-        ) : (
-          <MoonIcon
-            className='w-6 h-6 text-neutral-600 lg:ml-10 hover:text-neutral-700 justify-self-center'
-            onClick={toggleDarkMode}
-          />
-        )}
+        <ToggleDarkMode onToggleMenuBar={toggleMenuBar} />
       </div>
     </header>
   );
